@@ -19,14 +19,14 @@ float UUtilityAIConsideration::Evaluate(const UUtilityAIContext* Context) const
 
     const float Result = ResponseCurve->Evaluate(InputValue);
 
-    UE_LOG(
+    /*UE_LOG(
         LogTemp,
         Warning,
         TEXT("Consideration '%s': Input=%f Result=%f"),
         *Name.ToString(),
         InputValue,
         Result
-    );
+    );*/
 
     return Result;
 }

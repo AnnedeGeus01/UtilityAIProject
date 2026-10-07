@@ -22,32 +22,19 @@ void UUtilityAIComponent::BeginPlay()
 {
     Super::BeginPlay();
 
+    UE_LOG(
+        LogTemp,
+        Warning,
+        TEXT("UtilityAIComponent BeginPlay: %s | Component=%p"),
+        *GetOwner()->GetName(),
+        this
+    );
+
     if (DecisionManager)
     {
-        GEngine->AddOnScreenDebugMessage(
-            -1,
-            20.0f,
-            FColor::Yellow,
-            FString::Printf(
-                TEXT("DecisionManager Actions: %d"),
-                DecisionManager->Actions.Num()
-            )
-        );
-
         for (int32 i = 0; i < DecisionManager->Actions.Num(); ++i)
         {
             UUtilityAIAction* Action = DecisionManager->Actions[i];
-
-            GEngine->AddOnScreenDebugMessage(
-                -1,
-                20.0f,
-                FColor::Yellow,
-                FString::Printf(
-                    TEXT("[%d] %s"),
-                    i,
-                    *GetNameSafe(Action)
-                )
-            );
         }
     }
 
@@ -62,13 +49,20 @@ void UUtilityAIComponent::BeginPlay()
         );
     }
 
-    if (DebugWidgetClass)
+    if (DebugWidgetClass && !DebugWidget)
     {
-        DebugWidget =
-            CreateWidget<UUtilityAIDebugWidget>(
-                GetWorld(),
-                DebugWidgetClass
-            );
+        UE_LOG(
+            LogTemp,
+            Warning,
+            TEXT("Creating Debug Widget: %s | Component=%p"),
+            *GetOwner()->GetName(),
+            this
+        );
+
+        DebugWidget = CreateWidget<UUtilityAIDebugWidget>(
+            GetWorld(),
+            DebugWidgetClass
+        );
 
         if (DebugWidget)
         {

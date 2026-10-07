@@ -6,6 +6,8 @@
 
 class UUtilityAIComponent;
 class UTextBlock;
+class UVerticalBox;
+class UUtilityAIActionRow;
 
 UCLASS()
 class UTILITYAI_API UUtilityAIDebugWidget : public UUserWidget
@@ -27,10 +29,39 @@ protected:
     UPROPERTY(BlueprintReadOnly, Category = "Utility AI|Debug")
     TObjectPtr<UUtilityAIComponent> UtilityAIComponent;
 
+    // DEBUG WIDGET REFERENCES
+
     UPROPERTY(meta = (BindWidget))
-    TObjectPtr<UTextBlock> DebugText;
+    TObjectPtr<UTextBlock> CurrentActionText;
+
+    UPROPERTY(meta = (BindWidget))
+    TObjectPtr<UTextBlock> SelectedActionText;
+
+    UPROPERTY(meta = (BindWidget))
+    TObjectPtr<UTextBlock> CombinationMethodText;
+
+    UPROPERTY(meta = (BindWidget))
+    TObjectPtr<UVerticalBox> ActionList;
+
+    UPROPERTY(meta = (BindWidget))
+    TObjectPtr<UVerticalBox> ConsiderationList;
+
+    UPROPERTY()
+    TObjectPtr<UTextBlock> ConsiderationTextBlock;
+
+    // ACTION ROW
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Utility AI|Debug")
+    TSubclassOf<UUtilityAIActionRow> ActionRowClass;
+
+    // CACHED ACTION ROWS
+
+    UPROPERTY()
+    TArray<TObjectPtr<UUtilityAIActionRow>> ActionRows;
 
 private:
 
-    void RefreshDebugText();
+    void RefreshDebugWidget();
+
+    float RefreshTimer = 0.0f;
 };
