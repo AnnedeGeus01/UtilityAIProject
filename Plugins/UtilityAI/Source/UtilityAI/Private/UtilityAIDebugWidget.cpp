@@ -8,36 +8,54 @@
 #include "UtilityAIComponent.h"
 #include "UtilityAIAction.h"
 #include "UtilityAIActionRow.h"
+#include "UtilityAIConsiderationRow.h"
 #include "UtilityAIDebugTypes.h"
 
-
+/**
+ * Assigns the component and performs an initial refresh.
+ *
+ * @param InComponent Utility AI component to monitor.
+ */
 void UUtilityAIDebugWidget::SetUtilityAIComponent(
     UUtilityAIComponent* InComponent)
 {
     UtilityAIComponent = InComponent;
-
     RefreshDebugWidget();
 }
 
+/**
+ * Refreshes the display every couple of seconds, defined
+ * in the Utility AI component
+ *
+ * @param MyGeometry Geometry of the widget.
+ * @param InDeltaTime Time elapsed since the previous frame.
+ */
 void UUtilityAIDebugWidget::NativeTick(
     const FGeometry& MyGeometry,
     float InDeltaTime)
 {
-    Super::NativeTick(
-        MyGeometry,
-        InDeltaTime
-    );
+    Super::NativeTick(MyGeometry, InDeltaTime);
+
+    if (!UtilityAIComponent)
+    {
+        return;
+    }
 
     RefreshTimer += InDeltaTime;
 
-    if (RefreshTimer >= 0.2f)
+    const float RefreshInterval =
+        UtilityAIComponent->GetDecisionInterval();
+
+    if (RefreshInterval <= 0.0f || RefreshTimer >= RefreshInterval)
     {
         RefreshTimer = 0.0f;
-
         RefreshDebugWidget();
     }
 }
 
+/**
+ * Updates action information and consideration debug rows.
+ */
 void UUtilityAIDebugWidget::RefreshDebugWidget()
 {
     if (!UtilityAIComponent)
@@ -45,108 +63,67 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
         return;
     }
 
-
-    // =========================================================
-    // CURRENT ACTION
-    // =========================================================
-
+    // Update the currently executing action.
     if (CurrentActionText)
     {
-        FSlateFontInfo FontInfo =
-            CurrentActionText->GetFont();
-
+        FSlateFontInfo FontInfo = CurrentActionText->GetFont();
         FontInfo.Size = 12.f;
-
-        CurrentActionText->SetFont(
-            FontInfo
-        );
+        CurrentActionText->SetFont(FontInfo);
 
         UUtilityAIAction* CurrentAction =
             UtilityAIComponent->GetCurrentAction();
 
         if (CurrentAction)
         {
-            FString ActionName =
-                CurrentAction->GetName();
+            FString ActionName = CurrentAction->GetName();
 
-            // Remove Blueprint prefix.
-            ActionName.RemoveFromStart(
-                TEXT("BP_")
+            ActionName.RemoveFromStart(TEXT("BP_"));
+
+            const int32 ClassSuffixIndex = ActionName.Find(
+                TEXT("_C_"),
+                ESearchCase::IgnoreCase,
+                ESearchDir::FromEnd
             );
-
-            // Remove generated Unreal suffix.
-            const int32 ClassSuffixIndex =
-                ActionName.Find(
-                    TEXT("_C_"),
-                    ESearchCase::IgnoreCase,
-                    ESearchDir::FromEnd
-                );
 
             if (ClassSuffixIndex != INDEX_NONE)
             {
-                ActionName =
-                    ActionName.Left(
-                        ClassSuffixIndex
-                    );
+                ActionName = ActionName.Left(ClassSuffixIndex);
             }
 
             CurrentActionText->SetText(
                 FText::FromString(
-                    FString::Printf(
-                        TEXT("* %s"),
-                        *ActionName
-                    )
+                    FString::Printf(TEXT("* %s"), *ActionName)
                 )
             );
         }
         else
         {
-            CurrentActionText->SetText(
-                FText::FromString(
-                    TEXT("None")
-                )
-            );
+            CurrentActionText->SetText(FText::FromString(TEXT("None")));
         }
     }
 
-
-    // =========================================================
-    // ACTION LIST
-    // =========================================================
-
+    // Find the selected action in the debug data.
     const TArray<FUtilityAIActionDebugData>& DebugData =
         UtilityAIComponent->DebugData;
 
-    const FUtilityAIActionDebugData* SelectedActionData =
-        nullptr;
+    const FUtilityAIActionDebugData* SelectedActionData = nullptr;
 
-
-    // Find the selected action.
     for (const FUtilityAIActionDebugData& ActionData : DebugData)
     {
         if (ActionData.bSelected)
         {
-            SelectedActionData =
-                &ActionData;
-
+            SelectedActionData = &ActionData;
             break;
         }
     }
 
-
+    // Create and update reusable action rows.
     if (ActionList && ActionRowClass)
     {
-        // ---------------------------------------------------------
-        // Create rows only if we don't have enough.
-        // ---------------------------------------------------------
-
         while (ActionRows.Num() < DebugData.Num())
         {
             UUtilityAIActionRow* ActionRow =
-                CreateWidget<UUtilityAIActionRow>(
-                    this,
-                    ActionRowClass
-                );
+                CreateWidget<UUtilityAIActionRow>(this, ActionRowClass);
 
             if (!ActionRow)
             {
@@ -154,278 +131,205 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
             }
 
             UVerticalBoxSlot* ActionRowSlot =
-                ActionList->AddChildToVerticalBox(
-                    ActionRow
-                );
+                ActionList->AddChildToVerticalBox(ActionRow);
 
             if (ActionRowSlot)
             {
-                ActionRowSlot->SetPadding(
-                    FMargin(
-                        0.0f,
-                        2.0f
-                    )
-                );
+                ActionRowSlot->SetPadding(FMargin(0.0f, 2.0f));
             }
 
             ActionRows.Add(ActionRow);
         }
 
-
-        // ---------------------------------------------------------
-        // Update existing rows.
-        // ---------------------------------------------------------
-
         for (int32 Index = 0; Index < ActionRows.Num(); ++Index)
         {
-            if (!ActionRows[Index])
+            UUtilityAIActionRow* Row = ActionRows[Index];
+
+            if (!Row)
             {
                 continue;
             }
-
 
             if (Index < DebugData.Num())
             {
                 const FUtilityAIActionDebugData& ActionData =
                     DebugData[Index];
 
-                FString ActionName =
-                    ActionData.Name.ToString();
+                FString ActionName = ActionData.Name.ToString();
+                ActionName.RemoveFromStart(TEXT("BP_"));
 
-                // Remove Blueprint prefix.
-                ActionName.RemoveFromStart(
-                    TEXT("BP_")
-                );
-
-                // Remove generated Unreal suffix.
-                const int32 ClassSuffixIndex =
-                    ActionName.Find(
-                        TEXT("_C_"),
-                        ESearchCase::IgnoreCase,
-                        ESearchDir::FromEnd
-                    );
-
-                if (ClassSuffixIndex != INDEX_NONE)
-                {
-                    ActionName =
-                        ActionName.Left(
-                            ClassSuffixIndex
-                        );
-                }
-
-
-                ActionRows[Index]->SetActionData(
-                    ActionName,
-                    ActionData.Utility,
-                    ActionData.bSelected
-                );
-
-                ActionRows[Index]->SetVisibility(
-                    ESlateVisibility::Visible
-                );
-            }
-            else
-            {
-                ActionRows[Index]->SetVisibility(
-                    ESlateVisibility::Collapsed
-                );
-            }
-        }
-    }
-
-
-    // =========================================================
-    // SELECTED ACTION
-    // =========================================================
-
-    if (SelectedActionText)
-    {
-        FSlateFontInfo FontInfo =
-            SelectedActionText->GetFont();
-
-        FontInfo.Size = 12.f;
-
-        SelectedActionText->SetFont(
-            FontInfo
-        );
-
-
-        if (SelectedActionData)
-        {
-            FString SelectedName =
-                SelectedActionData->Name.ToString();
-
-            // Remove Blueprint prefix.
-            SelectedName.RemoveFromStart(
-                TEXT("BP_")
-            );
-
-            // Remove generated Unreal suffix.
-            const int32 ClassSuffixIndex =
-                SelectedName.Find(
+                const int32 ClassSuffixIndex = ActionName.Find(
                     TEXT("_C_"),
                     ESearchCase::IgnoreCase,
                     ESearchDir::FromEnd
                 );
 
+                if (ClassSuffixIndex != INDEX_NONE)
+                {
+                    ActionName = ActionName.Left(ClassSuffixIndex);
+                }
+
+                Row->SetActionData(
+                    ActionName,
+                    ActionData.Utility,
+                    ActionData.bSelected
+                );
+
+                Row->SetVisibility(ESlateVisibility::Visible);
+            }
+            else
+            {
+                Row->SetVisibility(ESlateVisibility::Collapsed);
+            }
+        }
+    }
+
+    // Update the selected action label.
+    if (SelectedActionText)
+    {
+        FSlateFontInfo FontInfo = SelectedActionText->GetFont();
+        FontInfo.Size = 12.f;
+        SelectedActionText->SetFont(FontInfo);
+
+        if (SelectedActionData)
+        {
+            FString SelectedName = SelectedActionData->Name.ToString();
+            SelectedName.RemoveFromStart(TEXT("BP_"));
+
+            const int32 ClassSuffixIndex = SelectedName.Find(
+                TEXT("_C_"),
+                ESearchCase::IgnoreCase,
+                ESearchDir::FromEnd
+            );
+
             if (ClassSuffixIndex != INDEX_NONE)
             {
-                SelectedName =
-                    SelectedName.Left(
-                        ClassSuffixIndex
-                    );
+                SelectedName = SelectedName.Left(ClassSuffixIndex);
             }
 
             SelectedActionText->SetText(
                 FText::FromString(
-                    FString::Printf(
-                        TEXT("SELECTED: %s"),
-                        *SelectedName
-                    )
+                    FString::Printf(TEXT("SELECTED: %s"), *SelectedName)
                 )
             );
         }
         else
         {
             SelectedActionText->SetText(
-                FText::FromString(
-                    TEXT("SELECTED: None")
-                )
+                FText::FromString(TEXT("SELECTED: None"))
             );
         }
     }
 
-    // =========================================================
-    // CONSIDERATIONS
-    // =========================================================
-
-    if (ConsiderationList)
+    // Create and update reusable consideration rows.
+    if (ConsiderationList && ConsiderationRowClass)
     {
-        // Create the text block only once.
-        if (!ConsiderationTextBlock)
+        const int32 NumConsiderations = SelectedActionData
+            ? SelectedActionData->Considerations.Num()
+            : 0;
+
+        while (ConsiderationRows.Num() < NumConsiderations)
         {
-            ConsiderationTextBlock =
-                NewObject<UTextBlock>(this);
+            UUtilityAIConsiderationRow* Row =
+                CreateWidget<UUtilityAIConsiderationRow>(
+                    this,
+                    ConsiderationRowClass
+                );
 
-            if (ConsiderationTextBlock)
+            if (!Row)
             {
-                FSlateFontInfo FontInfo =
-                    ConsiderationTextBlock->GetFont();
-
-                FontInfo.Size = 12.f;
-
-                ConsiderationTextBlock->SetFont(
-                    FontInfo
+                UE_LOG(
+                    LogTemp,
+                    Warning,
+                    TEXT("Failed to create Utility AI Consideration Row.")
                 );
-
-                ConsiderationTextBlock->SetAutoWrapText(
-                    true
-                );
-
-                ConsiderationTextBlock->SetJustification(
-                    ETextJustify::Left
-                );
-
-                ConsiderationList->AddChildToVerticalBox(
-                    ConsiderationTextBlock
-                );
+                break;
             }
+
+            UVerticalBoxSlot* RowSlot =
+                ConsiderationList->AddChildToVerticalBox(Row);
+
+            if (RowSlot)
+            {
+                RowSlot->SetPadding(FMargin(0.0f, 2.0f));
+            }
+
+            ConsiderationRows.Add(Row);
         }
 
-
-        if (ConsiderationTextBlock)
+        for (int32 Index = 0; Index < ConsiderationRows.Num(); ++Index)
         {
-            FString ConsiderationText;
+            UUtilityAIConsiderationRow* Row = ConsiderationRows[Index];
 
-
-            if (SelectedActionData)
+            if (!Row)
             {
-                for (
-                    const FUtilityAIConsiderationDebugData&
-                    Consideration :
-                    SelectedActionData->Considerations)
-                {
-                    ConsiderationText +=
-                        FString::Printf(
-                            TEXT("%s\n  Input %.2f -> Score %.2f\n\n"),
-                            *Consideration.Name.ToString(),
-                            Consideration.InputValue,
-                            Consideration.Score
-                        );
-                }
+                continue;
             }
 
+            if (SelectedActionData &&
+                Index < SelectedActionData->Considerations.Num())
+            {
+                const FUtilityAIConsiderationDebugData& Consideration =
+                    SelectedActionData->Considerations[Index];
 
-            ConsiderationTextBlock->SetText(
-                FText::FromString(
-                    ConsiderationText
-                )
-            );
+                Row->SetConsiderationData(
+                    Consideration.Name,
+                    Consideration.InputValue,
+                    Consideration.Score
+                );
+
+                Row->SetVisibility(ESlateVisibility::Visible);
+                Row->SetRenderOpacity(1.0f);
+            }
+            else
+            {
+                Row->SetVisibility(ESlateVisibility::Collapsed);
+            }
         }
     }
+    else
+    {
+        UE_LOG(
+            LogTemp,
+            Warning,
+            TEXT("Consideration list or row class is not assigned.")
+        );
+    }
 
-
-    // =========================================================
-    // COMBINATION METHOD
-    // =========================================================
-
+    // Display the selected action's combination method.
     if (CombinationMethodText)
     {
-        FSlateFontInfo FontInfo =
-            CombinationMethodText->GetFont();
-
+        FSlateFontInfo FontInfo = CombinationMethodText->GetFont();
         FontInfo.Size = 12.f;
-
-        CombinationMethodText->SetFont(
-            FontInfo
-        );
-
+        CombinationMethodText->SetFont(FontInfo);
 
         if (SelectedActionData)
         {
             FString CombinationText;
 
-
-            switch (
-                SelectedActionData->CombinationMethod)
+            switch (SelectedActionData->CombinationMethod)
             {
             case EUtilityAICombinationMethod::Multiply:
-
-                CombinationText =
-                    TEXT("Combination: Multiply");
-
+                CombinationText = TEXT("Combination: Multiply");
                 break;
-
 
             case EUtilityAICombinationMethod::Average:
-
-                CombinationText =
-                    TEXT("Combination: Average");
-
+                CombinationText = TEXT("Combination: Average");
                 break;
 
-
             default:
-
-                CombinationText =
-                    TEXT("Combination: Unknown");
-
+                CombinationText = TEXT("Combination: Unknown");
                 break;
             }
 
-
             CombinationMethodText->SetText(
-                FText::FromString(
-                    CombinationText
-                )
+                FText::FromString(CombinationText)
             );
         }
         else
         {
             CombinationMethodText->SetText(
-                FText::FromString(
-                    TEXT("Combination: None")
-                )
+                FText::FromString(TEXT("Combination: None"))
             );
         }
     }

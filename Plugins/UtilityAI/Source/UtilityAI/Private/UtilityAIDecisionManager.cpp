@@ -1,71 +1,14 @@
 #include "UtilityAIDecisionManager.h"
+
 #include "UtilityAIAction.h"
 #include "UtilityAIContext.h"
-#include "Engine/Engine.h" // for on screen debug messages, testing purposes
 
-//UUtilityAIAction* UUtilityAIDecisionManager::ChooseBestAction(
-//    const UUtilityAIContext* Context) const
-//{
-//    UUtilityAIAction* BestAction = nullptr;
-//    float BestUtility = -1.0f;
-//
-//    /*GEngine->AddOnScreenDebugMessage(
-//        -1,
-//        5.0f,
-//        FColor::Cyan,
-//        FString::Printf(TEXT("ACTIONS COUNT: %d"), Actions.Num())
-//    );*/
-//
-//    for (int32 Index = 0; Index < Actions.Num(); ++Index)
-//    {
-//        UUtilityAIAction* Action = Actions[Index];
-//
-//        if (!Action)
-//        {
-//            /*GEngine->AddOnScreenDebugMessage(
-//                -1,
-//                5.0f,
-//                FColor::Red,
-//                FString::Printf(TEXT("Action[%d] = NULL"), Index)
-//            );*/
-//
-//            continue;
-//        }
-//
-//        /*GEngine->AddOnScreenDebugMessage(
-//            -1,
-//            5.0f,
-//            FColor::Green,
-//            FString::Printf(
-//                TEXT("Action[%d] = %s"),
-//                Index,
-//                *Action->GetName()
-//            )
-//        );*/
-//
-//        const float Utility = Action->CalculateUtility(Context);
-//
-//        /*GEngine->AddOnScreenDebugMessage(
-//            -1,
-//            5.0f,
-//            FColor::Yellow,
-//            FString::Printf(
-//                TEXT("Utility: %s = %.3f"),
-//                *Action->GetName(),
-//                Utility
-//            )
-//        );*/
-//
-//        if (Utility > BestUtility)
-//        {
-//            BestUtility = Utility;
-//            BestAction = Action;
-//        }
-//    }
-//
-//    return BestAction;
-//}
-
+/**
+ * Selects the action with the highest utility score.
+ *
+ * @param Context Context containing values used by actions.
+ * @return The selected action, or nullptr if no valid action exists.
+ */
 UUtilityAIAction* UUtilityAIDecisionManager::ChooseBestAction(
     const UUtilityAIContext* Context
 ) const
@@ -75,6 +18,16 @@ UUtilityAIAction* UUtilityAIDecisionManager::ChooseBestAction(
     return ChooseBestActionWithDebug(Context, DebugData);
 }
 
+/**
+ * Evaluates actions and records their utility data.
+ *
+ * Null actions are skipped. The first action with the highest utility
+ * remains selected when multiple actions have equal scores.
+ *
+ * @param Context Context containing values used by actions.
+ * @param OutDebugData Receives action and consideration debug data.
+ * @return The action with the highest utility, or nullptr if none are valid.
+ */
 UUtilityAIAction* UUtilityAIDecisionManager::ChooseBestActionWithDebug(
     const UUtilityAIContext* Context,
     TArray<FUtilityAIActionDebugData>& OutDebugData
@@ -92,11 +45,12 @@ UUtilityAIAction* UUtilityAIDecisionManager::ChooseBestActionWithDebug(
             continue;
         }
 
+        // Prepare debug data for this action.
         FUtilityAIActionDebugData DebugData;
-
         DebugData.Name = Action->GetFName();
         DebugData.CombinationMethod = Action->CombinationMethod;
 
+        // Calculate utility and collect consideration scores.
         const float Utility =
             Action->CalculateUtilityWithDebug(
                 Context,
@@ -105,6 +59,7 @@ UUtilityAIAction* UUtilityAIDecisionManager::ChooseBestActionWithDebug(
 
         DebugData.Utility = Utility;
 
+        // Keep the action with the highest utility.
         if (Utility > BestUtility)
         {
             BestUtility = Utility;
@@ -114,7 +69,7 @@ UUtilityAIAction* UUtilityAIDecisionManager::ChooseBestActionWithDebug(
         OutDebugData.Add(DebugData);
     }
 
-    // Mark the winning action.
+    // Mark the selected action in the debug data.
     for (FUtilityAIActionDebugData& DebugData : OutDebugData)
     {
         if (BestAction &&

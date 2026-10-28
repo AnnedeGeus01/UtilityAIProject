@@ -1,7 +1,12 @@
 #include "UtilityAIContextDataSource.h"
 #include "UtilityAIContext.h"
-#include "UtilityAIComponent.h"
 
+/**
+ * Reads the configured value from the context.
+ *
+ * @param Context Context containing the stored values.
+ * @return Context value, or 0.0 if the context is null.
+ */
 float UUtilityAIContextDataSource::GetValue_Implementation(
     const UUtilityAIContext* Context
 ) const
@@ -11,15 +16,5 @@ float UUtilityAIContextDataSource::GetValue_Implementation(
         return 0.0f;
     }
 
-    const float Value = Context->GetContextValue(ContextValueName);
-
-    /*UE_LOG(
-        LogTemp,
-        Warning,
-        TEXT("UtilityAI ContextDataSource: %s = %f"),
-        *ContextValueName.ToString(),
-        Value
-    );*/
-
-    return Value;
+    return Context->GetContextValue(ContextValueName);
 }

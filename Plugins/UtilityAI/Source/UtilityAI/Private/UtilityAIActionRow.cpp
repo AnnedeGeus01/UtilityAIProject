@@ -3,27 +3,29 @@
 #include "Components/TextBlock.h"
 #include "Components/ProgressBar.h"
 
+/**
+ * Updates the action name, utility display and selection marker.
+ *
+ * @param InActionName Name of the action.
+ * @param InUtility Calculated utility score.
+ * @param bInSelected Whether the action is selected.
+ */
 void UUtilityAIActionRow::SetActionData(
     const FString& InActionName,
     float InUtility,
     bool bInSelected)
 {
+    // Show a marker for the selected action.
     if (ActionMarker)
     {
-        if (bInSelected)
-        {
-            ActionMarker->SetText(
-                FText::FromString(TEXT("*"))
-            );
-        }
-        else
-        {
-            ActionMarker->SetText(
-                FText::GetEmpty()
-            );
-        }
+        ActionMarker->SetText(
+            bInSelected
+            ? FText::FromString(TEXT("*"))
+            : FText::GetEmpty()
+        );
     }
 
+    // Display the action name.
     if (ActionName)
     {
         ActionName->SetText(
@@ -31,6 +33,7 @@ void UUtilityAIActionRow::SetActionData(
         );
     }
 
+    // Update the utility bar.
     if (UtilityBar)
     {
         UtilityBar->SetPercent(
@@ -38,6 +41,7 @@ void UUtilityAIActionRow::SetActionData(
         );
     }
 
+    // Display utility to two decimal places.
     if (UtilityValue)
     {
         UtilityValue->SetText(
