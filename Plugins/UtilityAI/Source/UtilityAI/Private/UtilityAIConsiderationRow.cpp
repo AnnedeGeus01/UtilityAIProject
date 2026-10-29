@@ -1,13 +1,30 @@
 #include "UtilityAIConsiderationRow.h"
 
+#include "Components/CheckBox.h"
 #include "Components/TextBlock.h"
 #include "Components/ProgressBar.h"
 
 /**
- * Updates the consideration row widgets.
+ * Binds the checkbox state change event.
+ */
+void UUtilityAIConsiderationRow::NativeOnInitialized()
+{
+    Super::NativeOnInitialized();
+
+    if (ConsiderationCheckBox)
+    {
+        ConsiderationCheckBox->OnCheckStateChanged.AddUniqueDynamic(
+            this,
+            &UUtilityAIConsiderationRow::HandleCheckStateChanged
+        );
+    }
+}
+
+/**
+ * Updates the displayed consideration data.
  *
  * @param InName Name of the consideration.
- * @param InInputValue Raw input value. (Currently unused)
+ * @param InInputValue Raw input value.
  * @param InScore Evaluated consideration score.
  */
 void UUtilityAIConsiderationRow::SetConsiderationData(
@@ -16,22 +33,18 @@ void UUtilityAIConsiderationRow::SetConsiderationData(
     float InScore
 )
 {
-    // Keep the score within the valid range.
     const float Score = FMath::Clamp(InScore, 0.0f, 1.0f);
 
-    // Update the consideration name.
     if (ConsiderationName)
     {
         ConsiderationName->SetText(FText::FromName(InName));
     }
 
-    // Update the progress bar using the score.
     if (ConsiderationBar)
     {
         ConsiderationBar->SetPercent(Score);
     }
 
-    // Display the score with two decimal places.
     if (ConsiderationScore)
     {
         FNumberFormattingOptions FormatOptions;
@@ -43,4 +56,38 @@ void UUtilityAIConsiderationRow::SetConsiderationData(
             FText::AsNumber(Score, &FormatOptions)
         );
     }
+}
+
+/**
+ * Sets the checkbox state without triggering selection callbacks.
+ *
+ * @param bIsSelected Whether this row should be selected.
+ */
+void UUtilityAIConsiderationRow::SetSelected(bool bIsSelected)
+{
+    if (!ConsiderationCheckBox)
+    {
+        return;
+    }
+
+    bUpdatingSelection = true;
+    ConsiderationCheckBox->SetIsChecked(bIsSelected);
+    bUpdatingSelection = false;
+}
+
+/**
+ * Broadcasts user-driven checkbox selection changes.
+ *
+ * @param bIsChecked Whether the checkbox is checked.
+ */
+void UUtilityAIConsiderationRow::HandleCheckStateChanged(
+    bool bIsChecked
+)
+{
+    if (bUpdatingSelection)
+    {
+        return;
+    }
+
+    OnSelectionChanged.Broadcast(this, bIsChecked);
 }

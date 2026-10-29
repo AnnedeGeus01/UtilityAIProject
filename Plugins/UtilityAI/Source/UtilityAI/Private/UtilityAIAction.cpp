@@ -83,6 +83,7 @@ float UUtilityAIAction::CalculateUtilityWithDebug(
         DebugData.Name = Consideration->Name;
         DebugData.InputValue = InputValue;
         DebugData.Score = Score;
+        DebugData.ResponseCurve = Consideration->ResponseCurve;
 
         OutConsiderations.Add(DebugData);
 

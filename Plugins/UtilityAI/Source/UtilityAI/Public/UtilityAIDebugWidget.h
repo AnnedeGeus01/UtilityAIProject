@@ -9,12 +9,14 @@ class UTextBlock;
 class UVerticalBox;
 class UUtilityAIActionRow;
 class UUtilityAIConsiderationRow;
+class UUtilityAIResponseCurve;
+class UUtilityAIResponseCurveGraph;
 
 /**
  * Displays runtime utility AI decisions and consideration scores.
  *
- * Refreshes the current action, action utilities, selected action
- * considerations, and combination method.
+ * Refreshes action utilities, the selected action's considerations,
+ * and the response curve for the selected consideration.
  */
 UCLASS()
 class UTILITYAI_API UUtilityAIDebugWidget : public UUserWidget
@@ -22,7 +24,6 @@ class UTILITYAI_API UUtilityAIDebugWidget : public UUserWidget
     GENERATED_BODY()
 
 public:
-
     /**
      * Assigns the component to monitor and refreshes the display.
      *
@@ -32,10 +33,8 @@ public:
     void SetUtilityAIComponent(UUtilityAIComponent* InComponent);
 
 protected:
-
     /**
-     * Updates the debug display at regular intervals. Same as 
-     * the descision interval set in the Utiliti AI Component.
+     * Updates the debug display at regular intervals.
      *
      * @param MyGeometry Geometry of the widget.
      * @param InDeltaTime Time elapsed since the previous frame.
@@ -45,7 +44,7 @@ protected:
         float InDeltaTime
     ) override;
 
-    /** Utility AI component being monitored. */
+    /** Component supplying runtime utility AI debug data. */
     UPROPERTY(BlueprintReadOnly, Category = "Utility AI|Debug")
     TObjectPtr<UUtilityAIComponent> UtilityAIComponent;
 
@@ -53,7 +52,7 @@ protected:
     UPROPERTY(meta = (BindWidget))
     TObjectPtr<UTextBlock> CurrentActionText;
 
-    /** Displays the selected action name. */
+    /** Displays the action selected by the decision manager. */
     UPROPERTY(meta = (BindWidget))
     TObjectPtr<UTextBlock> SelectedActionText;
 
@@ -61,35 +60,77 @@ protected:
     UPROPERTY(meta = (BindWidget))
     TObjectPtr<UTextBlock> CombinationMethodText;
 
-    /** Contains rows for all available actions. */
+    /** Contains the reusable action debug rows. */
     UPROPERTY(meta = (BindWidget))
     TObjectPtr<UVerticalBox> ActionList;
 
-    /** Contains rows for the selected action's considerations. */
+    /** Contains the reusable consideration debug rows. */
     UPROPERTY(meta = (BindWidget))
     TObjectPtr<UVerticalBox> ConsiderationList;
 
-    /** Widget class used to create action rows. */
+    /** Displays the selected consideration's response curve. */
+    UPROPERTY(meta = (BindWidget))
+    TObjectPtr<UUtilityAIResponseCurveGraph> ResponseCurveGraph;
+
+    /** Widget class used to create action debug rows. */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Utility AI|Debug")
     TSubclassOf<UUtilityAIActionRow> ActionRowClass;
 
-    /** Reusable action row widgets. */
+    /** Reusable action debug row instances. */
     UPROPERTY()
     TArray<TObjectPtr<UUtilityAIActionRow>> ActionRows;
 
-    /** Widget class used to create consideration rows. */
+    /** Widget class used to create consideration debug rows. */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Utility AI|Debug")
     TSubclassOf<UUtilityAIConsiderationRow> ConsiderationRowClass;
 
-    /** Reusable consideration row widgets. */
+    /** Reusable consideration debug row instances. */
     UPROPERTY()
     TArray<TObjectPtr<UUtilityAIConsiderationRow>> ConsiderationRows;
 
 private:
-
     /** Updates all debug display elements. */
     void RefreshDebugWidget();
 
+    /** Updates the graph using the current selection. */
+    void UpdateResponseCurveGraph();
+
+    /**
+     * Clears the selected consideration and its graph.
+     */
+    void ClearConsiderationSelection();
+
+    /**
+     * Handles selection changes from consideration rows.
+     *
+     * @param Row Row whose selection changed.
+     * @param bIsSelected Whether the row is selected.
+     */
+    void HandleConsiderationSelectionChanged(
+        UUtilityAIConsiderationRow* Row,
+        bool bIsSelected
+    );
+
     /** Time accumulated between display refreshes. */
     float RefreshTimer = 0.0f;
+
+    /** Currently selected consideration row. */
+    UPROPERTY()
+    TObjectPtr<UUtilityAIConsiderationRow> SelectedConsiderationRow;
+
+    /** Response curve belonging to the selected consideration. */
+    UPROPERTY()
+    TObjectPtr<UUtilityAIResponseCurve> SelectedResponseCurve;
+
+    /** Current input value of the selected consideration. */
+    float SelectedConsiderationInput = 0.0f;
+
+    /** Current evaluated score of the selected consideration. */
+    float SelectedConsiderationScore = 0.0f;
+
+    /** Name of the action containing the selected consideration. */
+    FName SelectedConsiderationActionName = NAME_None;
+
+    /** Name of the selected consideration. */
+    FName SelectedConsiderationName = NAME_None;
 };

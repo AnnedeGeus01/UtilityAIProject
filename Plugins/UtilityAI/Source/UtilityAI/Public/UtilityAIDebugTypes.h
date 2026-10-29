@@ -4,6 +4,8 @@
 #include "UtilityAIAction.h"
 #include "UtilityAIDebugTypes.generated.h"
 
+class UUtilityAIResponseCurve;
+
 /**
  * Stores debug information for a single consideration.
  */
@@ -23,6 +25,10 @@ struct FUtilityAIConsiderationDebugData
     /** Output score produced by the consideration. */
     UPROPERTY(BlueprintReadOnly)
     float Score = 0.0f;
+
+    /** Response curve beloning to the consideration. */
+    UPROPERTY(BlueprintReadOnly)
+    TObjectPtr<UUtilityAIResponseCurve> ResponseCurve;
 };
 
 /**

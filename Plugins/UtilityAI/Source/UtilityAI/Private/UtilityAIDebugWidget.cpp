@@ -9,6 +9,8 @@
 #include "UtilityAIAction.h"
 #include "UtilityAIActionRow.h"
 #include "UtilityAIConsiderationRow.h"
+#include "UtilityAIResponseCurve.h"
+#include "UtilityAIResponseCurveGraph.h"
 #include "UtilityAIDebugTypes.h"
 
 /**
@@ -17,22 +19,28 @@
  * @param InComponent Utility AI component to monitor.
  */
 void UUtilityAIDebugWidget::SetUtilityAIComponent(
-    UUtilityAIComponent* InComponent)
+    UUtilityAIComponent* InComponent
+)
 {
     UtilityAIComponent = InComponent;
+    RefreshTimer = 0.0f;
+
+    ClearConsiderationSelection();
+    SelectedConsiderationActionName = NAME_None;
+
     RefreshDebugWidget();
 }
 
 /**
- * Refreshes the display every couple of seconds, defined
- * in the Utility AI component
+ * Refreshes the display using the component's decision interval.
  *
  * @param MyGeometry Geometry of the widget.
  * @param InDeltaTime Time elapsed since the previous frame.
  */
 void UUtilityAIDebugWidget::NativeTick(
     const FGeometry& MyGeometry,
-    float InDeltaTime)
+    float InDeltaTime
+)
 {
     Super::NativeTick(MyGeometry, InDeltaTime);
 
@@ -54,6 +62,65 @@ void UUtilityAIDebugWidget::NativeTick(
 }
 
 /**
+ * Clears the selected consideration and hides its graph.
+ */
+void UUtilityAIDebugWidget::ClearConsiderationSelection()
+{
+    SelectedConsiderationRow = nullptr;
+    SelectedResponseCurve = nullptr;
+    SelectedConsiderationInput = 0.0f;
+    SelectedConsiderationScore = 0.0f;
+    SelectedConsiderationName = NAME_None;
+
+    if (ResponseCurveGraph)
+    {
+        ResponseCurveGraph->ClearGraph();
+        ResponseCurveGraph->SetVisibility(
+            ESlateVisibility::Collapsed
+        );
+    }
+
+    for (UUtilityAIConsiderationRow* Row : ConsiderationRows)
+    {
+        if (Row)
+        {
+            Row->SetSelected(false);
+        }
+    }
+}
+
+/**
+ * Updates the graph using the current selection.
+ */
+void UUtilityAIDebugWidget::UpdateResponseCurveGraph()
+{
+    if (!ResponseCurveGraph)
+    {
+        return;
+    }
+
+    if (!SelectedConsiderationRow || !SelectedResponseCurve)
+    {
+        ResponseCurveGraph->ClearGraph();
+        ResponseCurveGraph->SetVisibility(
+            ESlateVisibility::Collapsed
+        );
+        return;
+    }
+
+    ResponseCurveGraph->SetGraphData(
+        SelectedResponseCurve,
+        SelectedConsiderationInput,
+        SelectedConsiderationScore,
+        SelectedConsiderationName
+    );
+
+    ResponseCurveGraph->SetVisibility(
+        ESlateVisibility::Visible
+    );
+}
+
+/**
  * Updates action information and consideration debug rows.
  */
 void UUtilityAIDebugWidget::RefreshDebugWidget()
@@ -67,7 +134,7 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
     if (CurrentActionText)
     {
         FSlateFontInfo FontInfo = CurrentActionText->GetFont();
-        FontInfo.Size = 12.f;
+        FontInfo.Size = 12.0f;
         CurrentActionText->SetFont(FontInfo);
 
         UUtilityAIAction* CurrentAction =
@@ -98,7 +165,9 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
         }
         else
         {
-            CurrentActionText->SetText(FText::FromString(TEXT("None")));
+            CurrentActionText->SetText(
+                FText::FromString(TEXT("None"))
+            );
         }
     }
 
@@ -117,13 +186,27 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
         }
     }
 
+    // Clear the selection when the selected action changes.
+    const FName CurrentSelectedActionName = SelectedActionData
+        ? SelectedActionData->Name
+        : NAME_None;
+
+    if (CurrentSelectedActionName != SelectedConsiderationActionName)
+    {
+        ClearConsiderationSelection();
+        SelectedConsiderationActionName = CurrentSelectedActionName;
+    }
+
     // Create and update reusable action rows.
     if (ActionList && ActionRowClass)
     {
         while (ActionRows.Num() < DebugData.Num())
         {
             UUtilityAIActionRow* ActionRow =
-                CreateWidget<UUtilityAIActionRow>(this, ActionRowClass);
+                CreateWidget<UUtilityAIActionRow>(
+                    this,
+                    ActionRowClass
+                );
 
             if (!ActionRow)
             {
@@ -188,7 +271,7 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
     if (SelectedActionText)
     {
         FSlateFontInfo FontInfo = SelectedActionText->GetFont();
-        FontInfo.Size = 12.f;
+        FontInfo.Size = 12.0f;
         SelectedActionText->SetFont(FontInfo);
 
         if (SelectedActionData)
@@ -243,6 +326,7 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
                     Warning,
                     TEXT("Failed to create Utility AI Consideration Row.")
                 );
+
                 break;
             }
 
@@ -253,6 +337,11 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
             {
                 RowSlot->SetPadding(FMargin(0.0f, 2.0f));
             }
+
+            Row->OnSelectionChanged.AddUObject(
+                this,
+                &UUtilityAIDebugWidget::HandleConsiderationSelectionChanged
+            );
 
             ConsiderationRows.Add(Row);
         }
@@ -266,8 +355,10 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
                 continue;
             }
 
-            if (SelectedActionData &&
-                Index < SelectedActionData->Considerations.Num())
+            if (
+                SelectedActionData &&
+                Index < SelectedActionData->Considerations.Num()
+                )
             {
                 const FUtilityAIConsiderationDebugData& Consideration =
                     SelectedActionData->Considerations[Index];
@@ -280,10 +371,45 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
 
                 Row->SetVisibility(ESlateVisibility::Visible);
                 Row->SetRenderOpacity(1.0f);
+
+                // Keep the selected consideration's values current.
+                if (Row == SelectedConsiderationRow)
+                {
+                    SelectedResponseCurve = Consideration.ResponseCurve;
+                    SelectedConsiderationInput = Consideration.InputValue;
+                    SelectedConsiderationScore = Consideration.Score;
+                    SelectedConsiderationName = Consideration.Name;
+                }
             }
             else
             {
+                if (Row == SelectedConsiderationRow)
+                {
+                    ClearConsiderationSelection();
+                }
+
                 Row->SetVisibility(ESlateVisibility::Collapsed);
+            }
+        }
+
+        // Automatically select the first consideration when needed.
+        if (
+            SelectedActionData &&
+            SelectedActionData->Considerations.Num() > 0 &&
+            !SelectedConsiderationRow
+            )
+        {
+            if (
+                ConsiderationRows.Num() > 0 &&
+                ConsiderationRows[0] &&
+                ConsiderationRows[0]->GetVisibility() !=
+                ESlateVisibility::Collapsed
+                )
+            {
+                HandleConsiderationSelectionChanged(
+                    ConsiderationRows[0],
+                    true
+                );
             }
         }
     }
@@ -300,7 +426,7 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
     if (CombinationMethodText)
     {
         FSlateFontInfo FontInfo = CombinationMethodText->GetFont();
-        FontInfo.Size = 12.f;
+        FontInfo.Size = 12.0f;
         CombinationMethodText->SetFont(FontInfo);
 
         if (SelectedActionData)
@@ -333,4 +459,87 @@ void UUtilityAIDebugWidget::RefreshDebugWidget()
             );
         }
     }
+
+    // Refresh the graph with the latest input and score.
+    UpdateResponseCurveGraph();
+}
+
+/**
+ * Handles consideration selection and enforces exclusive selection.
+ *
+ * @param Row Row whose selection changed.
+ * @param bIsSelected Whether the row is selected.
+ */
+void UUtilityAIDebugWidget::HandleConsiderationSelectionChanged(
+    UUtilityAIConsiderationRow* Row,
+    bool bIsSelected
+)
+{
+    if (!Row || !UtilityAIComponent)
+    {
+        return;
+    }
+
+    // Keep the active selection checked.
+    if (!bIsSelected && SelectedConsiderationRow == Row)
+    {
+        Row->SetSelected(true);
+        return;
+    }
+
+    // Ignore an unchecked row that is not currently selected.
+    if (!bIsSelected)
+    {
+        return;
+    }
+
+    // Find the currently selected action's debug data.
+    const FUtilityAIActionDebugData* SelectedActionData = nullptr;
+
+    for (const FUtilityAIActionDebugData& ActionData :
+        UtilityAIComponent->DebugData)
+    {
+        if (ActionData.bSelected)
+        {
+            SelectedActionData = &ActionData;
+            break;
+        }
+    }
+
+    if (!SelectedActionData)
+    {
+        ClearConsiderationSelection();
+        return;
+    }
+
+    // Find the consideration represented by this row.
+    const int32 RowIndex = ConsiderationRows.IndexOfByKey(Row);
+
+    if (!SelectedActionData->Considerations.IsValidIndex(RowIndex))
+    {
+        ClearConsiderationSelection();
+        return;
+    }
+
+    const FUtilityAIConsiderationDebugData& Consideration =
+        SelectedActionData->Considerations[RowIndex];
+
+    // Store the selected consideration and its current values.
+    SelectedConsiderationRow = Row;
+    SelectedResponseCurve = Consideration.ResponseCurve;
+    SelectedConsiderationInput = Consideration.InputValue;
+    SelectedConsiderationScore = Consideration.Score;
+    SelectedConsiderationName = Consideration.Name;
+    SelectedConsiderationActionName = SelectedActionData->Name;
+
+    // Keep only the selected row checked.
+    for (UUtilityAIConsiderationRow* OtherRow : ConsiderationRows)
+    {
+        if (OtherRow)
+        {
+            OtherRow->SetSelected(OtherRow == Row);
+        }
+    }
+
+    UpdateResponseCurveGraph();
 }

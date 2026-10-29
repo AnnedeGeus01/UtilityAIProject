@@ -1,0 +1,43 @@
+flowchart TD
+    A([BeginPlay / Decision Timer]) --> B[MakeDecision]
+    B --> C[UpdateContextFromBindings]
+    C --> D[Read configured actor properties]
+    D --> E[Normalize values if enabled]
+    E --> F[Store values in UtilityAIContext]
+
+    F --> G[DecisionManager: Evaluate Actions]
+    G --> H[Action: Calculate Utility]
+
+    H --> I[For Each Consideration]
+    I --> J[DataSource: Get Input Value]
+    J --> K{Response Curve Configured?}
+
+    K -- Yes --> L[Evaluate Response Curve]
+    K -- No --> M[Clamp Input to 0..1]
+    L --> N[Obtain Consideration Score]
+    M --> N
+
+    N --> O[Record Consideration Debug Data]
+    O --> P{More Considerations?}
+    P -- Yes --> I
+    P -- No --> Q{Combination Method}
+
+    Q -- Multiply --> R[Multiply Valid Scores]
+    Q -- Average --> S[Average Valid Scores]
+
+    R --> T[Record Action Utility and Debug Data]
+    S --> T
+    T --> U{More Actions?}
+    U -- Yes --> H
+    U -- No --> V[Choose Action with Highest Utility]
+
+    V --> W[Update CurrentAction and Selection State]
+    W --> X[Refresh Debug Data]
+    X --> Y{An Action Was Selected?}
+
+    Y -- Yes --> Z[Execute Selected Action]
+    Y -- No --> AA[No Action Executed]
+
+    Z --> AB([Wait for Next Decision Interval])
+    AA --> AB
+    AB --> B

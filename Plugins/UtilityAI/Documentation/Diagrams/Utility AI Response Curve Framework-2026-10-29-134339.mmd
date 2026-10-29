@@ -1,0 +1,144 @@
+classDiagram
+direction TB
+
+class UActorComponent
+class UObject
+class UUserWidget
+
+class UUtilityAIContext {
+  +GetContextValue(Name) float
+  +SetValue(Name, Value)
+}
+
+class UUtilityAIDecisionManager {
+  +Actions
+  +ChooseBestAction(Context)
+  +ChooseBestActionWithDebug(Context, OutDebugData)
+}
+
+class UUtilityAIAction {
+  +Considerations
+  +CombinationMethod
+  +Execute()
+  +CalculateUtility(Context) float
+  +CalculateUtilityWithDebug(Context, OutConsiderations)
+}
+
+class UUtilityAIConsideration {
+  +Name
+  +DataSource
+  +ResponseCurve
+  +Evaluate(Context) float
+}
+
+class UUtilityAIDataSource {
+  +GetValue(Context) float
+}
+
+class UUtilityAIContextDataSource {
+  +ContextValueName
+}
+
+class UUtilityAIResponseCurve {
+  +Curve
+  +Evaluate(Input) float
+}
+
+class FUtilityAIValueBinding {
+  +PropertyName
+  +bNormalizeValue
+  +InputMin
+  +InputMax
+}
+
+class FUtilityAIContextValue {
+  +Name
+  +Type
+  +FloatValue
+  +BoolValue
+}
+
+class FUtilityAIActionDebugData {
+  +Name
+  +Utility
+  +bSelected
+  +CombinationMethod
+  +Considerations
+}
+
+class FUtilityAIConsiderationDebugData {
+  +Name
+  +InputValue
+  +Score
+  +ResponseCurve
+}
+
+class UUtilityAIDebugWidget {
+  +SetUtilityAIComponent(Component)
+  -RefreshDebugWidget()
+  -UpdateResponseCurveGraph()
+  -ClearConsiderationSelection()
+}
+
+class UUtilityAIActionRow {
+  +SetActionData(Name, Utility, Selected)
+}
+
+class UUtilityAIConsiderationRow {
+  +SetConsiderationData(Name, InputValue, Score)
+  +SetSelected(Selected)
+}
+
+class UUtilityAIResponseCurveGraph {
+  +SetGraphData(Curve, Input, Score, Name)
+  +ClearGraph()
+}
+
+class UUtilityAIComponent {
+  +Context
+  +DecisionManager
+  +DecisionInterval
+  +ValueBindings
+  +DebugData
+  +MakeDecision()
+  +UpdateContextFromBindings()
+  +GetCurrentAction()
+}
+
+UObject <|-- UUtilityAIContext
+UObject <|-- UUtilityAIDecisionManager
+UObject <|-- UUtilityAIAction
+UObject <|-- UUtilityAIConsideration
+UObject <|-- UUtilityAIDataSource
+UUtilityAIDataSource <|-- UUtilityAIContextDataSource
+UObject <|-- UUtilityAIResponseCurve
+
+UActorComponent <|-- UUtilityAIComponent
+
+UUserWidget <|-- UUtilityAIDebugWidget
+UUserWidget <|-- UUtilityAIActionRow
+UUserWidget <|-- UUtilityAIConsiderationRow
+UUserWidget <|-- UUtilityAIResponseCurveGraph
+
+UUtilityAIComponent "1" *-- "1" UUtilityAIContext : owns
+UUtilityAIComponent "1" *-- "1" UUtilityAIDecisionManager : owns
+UUtilityAIComponent "1" o-- "0..*" FUtilityAIValueBinding : configures
+UUtilityAIComponent "1" --> "0..1" UUtilityAIAction : CurrentAction
+UUtilityAIComponent --> FUtilityAIActionDebugData : records
+
+UUtilityAIDecisionManager "1" *-- "0..*" UUtilityAIAction : evaluates
+UUtilityAIAction "1" *-- "0..*" UUtilityAIConsideration : evaluates
+UUtilityAIConsideration "1" *-- "1" UUtilityAIDataSource : reads input
+UUtilityAIConsideration "1" *-- "0..1" UUtilityAIResponseCurve : scores input
+UUtilityAIContextDataSource --> UUtilityAIContext : reads values
+
+UUtilityAIContext "1" --> "0..*" FUtilityAIContextValue : stores
+FUtilityAIActionDebugData "1" *-- "0..*" FUtilityAIConsiderationDebugData : contains
+FUtilityAIConsiderationDebugData --> UUtilityAIResponseCurve : references
+
+UUtilityAIDebugWidget --> UUtilityAIComponent : monitors
+UUtilityAIDebugWidget *-- UUtilityAIActionRow : displays
+UUtilityAIDebugWidget *-- UUtilityAIConsiderationRow : displays
+UUtilityAIDebugWidget --> UUtilityAIResponseCurveGraph : updates
+UUtilityAIConsiderationRow ..> UUtilityAIDebugWidget : selection event
+UUtilityAIResponseCurveGraph --> UUtilityAIResponseCurve : visualizes
