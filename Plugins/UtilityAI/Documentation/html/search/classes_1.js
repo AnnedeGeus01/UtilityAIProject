@@ -10,5 +10,6 @@ var searchData=
   ['uutilityaidatasource_7',['UUtilityAIDataSource',['../class_u_utility_a_i_data_source.html',1,'']]],
   ['uutilityaidebugwidget_8',['UUtilityAIDebugWidget',['../class_u_utility_a_i_debug_widget.html',1,'']]],
   ['uutilityaidecisionmanager_9',['UUtilityAIDecisionManager',['../class_u_utility_a_i_decision_manager.html',1,'']]],
-  ['uutilityairesponsecurve_10',['UUtilityAIResponseCurve',['../class_u_utility_a_i_response_curve.html',1,'']]]
+  ['uutilityairesponsecurve_10',['UUtilityAIResponseCurve',['../class_u_utility_a_i_response_curve.html',1,'']]],
+  ['uutilityairesponsecurvegraph_11',['UUtilityAIResponseCurveGraph',['../class_u_utility_a_i_response_curve_graph.html',1,'']]]
 ];

@@ -118,16 +118,108 @@ Collaboration diagram for UUtilityAIConsiderationRow:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5e6b078fd8213a3b2cb43028fda39fdf" id="r_a5e6b078fd8213a3b2cb43028fda39fdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e6b078fd8213a3b2cb43028fda39fdf">SetConsiderationData</a> (FName InName, float InInputValue, float InScore)</td></tr>
+<tr class="memitem:a02997dd667eab1a322dbe978022c9394" id="r_a02997dd667eab1a322dbe978022c9394"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02997dd667eab1a322dbe978022c9394">SetSelected</a> (bool bIsSelected)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ae5e93d348e5196e2dce6849d17603cfd" id="r_ae5e93d348e5196e2dce6849d17603cfd"><td class="memItemLeft" align="right" valign="top">FOnUtilityAIConsiderationSelectionChanged&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5e93d348e5196e2dce6849d17603cfd">OnSelectionChanged</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa7338d2a8f4deaf359743d2c6b982e63" id="r_aa7338d2a8f4deaf359743d2c6b982e63"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7338d2a8f4deaf359743d2c6b982e63">NativeOnInitialized</a> () override</td></tr>
+<tr class="memitem:a41390ce3d0bdef744b9cfa31f613b7ed" id="r_a41390ce3d0bdef744b9cfa31f613b7ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41390ce3d0bdef744b9cfa31f613b7ed">HandleCheckStateChanged</a> (bool bIsChecked)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a7331995d36382fce03c96f6d202b9132" id="r_a7331995d36382fce03c96f6d202b9132"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; UCheckBox &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7331995d36382fce03c96f6d202b9132">ConsiderationCheckBox</a></td></tr>
 <tr class="memitem:a52f5c667ed17b278ec9941cff1b5b9b9" id="r_a52f5c667ed17b278ec9941cff1b5b9b9"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; UTextBlock &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52f5c667ed17b278ec9941cff1b5b9b9">ConsiderationName</a></td></tr>
 <tr class="memitem:a1716218c93b48eb13293d4c5f3f06f5c" id="r_a1716218c93b48eb13293d4c5f3f06f5c"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; UProgressBar &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1716218c93b48eb13293d4c5f3f06f5c">ConsiderationBar</a></td></tr>
 <tr class="memitem:a821efd9555d757f2e84d91c6e984c65c" id="r_a821efd9555d757f2e84d91c6e984c65c"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; UTextBlock &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a821efd9555d757f2e84d91c6e984c65c">ConsiderationScore</a></td></tr>
+<tr class="memitem:a7e01993ae26903b6898a213f85e8b9bf" id="r_a7e01993ae26903b6898a213f85e8b9bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e01993ae26903b6898a213f85e8b9bf">bUpdatingSelection</a> = false</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Displays a consideration's name, score and progress bar. Used for the Utility AI debug widget. </p>
+<div class="textblock"><p>Displays a consideration's name, score and progress bar. Used for the Utility AI debug widget. Allows the user to select a consideration for curve debugging. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a41390ce3d0bdef744b9cfa31f613b7ed" name="a41390ce3d0bdef744b9cfa31f613b7ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41390ce3d0bdef744b9cfa31f613b7ed">&#9670;&#160;</a></span>HandleCheckStateChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UUtilityAIConsiderationRow::HandleCheckStateChanged </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>bIsChecked</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Handles user changes to the checkbox.</p>
+<p>Broadcasts user-driven checkbox selection changes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bIsChecked</td><td>Whether the checkbox is checked. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_utility_a_i_consideration_row_a41390ce3d0bdef744b9cfa31f613b7ed_icgraph.png" border="0" usemap="#aclass_u_utility_a_i_consideration_row_a41390ce3d0bdef744b9cfa31f613b7ed_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_u_utility_a_i_consideration_row_a41390ce3d0bdef744b9cfa31f613b7ed_icgraph" id="aclass_u_utility_a_i_consideration_row_a41390ce3d0bdef744b9cfa31f613b7ed_icgraph">
+<area shape="rect" title=" " alt="" coords="239,5,430,48"/>
+<area shape="rect" href="class_u_utility_a_i_consideration_row.html#aa7338d2a8f4deaf359743d2c6b982e63" title=" " alt="" coords="5,5,191,48"/>
+<area shape="poly" title=" " alt="" coords="223,29,191,29,191,24,223,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa7338d2a8f4deaf359743d2c6b982e63" name="aa7338d2a8f4deaf359743d2c6b982e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7338d2a8f4deaf359743d2c6b982e63">&#9670;&#160;</a></span>NativeOnInitialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UUtilityAIConsiderationRow::NativeOnInitialized </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Binds the checkbox event after widget initialization.</p>
+<p>Binds the checkbox state change event. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_utility_a_i_consideration_row_aa7338d2a8f4deaf359743d2c6b982e63_cgraph.png" border="0" usemap="#aclass_u_utility_a_i_consideration_row_aa7338d2a8f4deaf359743d2c6b982e63_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_u_utility_a_i_consideration_row_aa7338d2a8f4deaf359743d2c6b982e63_cgraph" id="aclass_u_utility_a_i_consideration_row_aa7338d2a8f4deaf359743d2c6b982e63_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,191,48"/>
+<area shape="rect" href="class_u_utility_a_i_consideration_row.html#a41390ce3d0bdef744b9cfa31f613b7ed" title=" " alt="" coords="239,5,430,48"/>
+<area shape="poly" title=" " alt="" coords="191,24,223,24,223,29,191,29"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a5e6b078fd8213a3b2cb43028fda39fdf" name="a5e6b078fd8213a3b2cb43028fda39fdf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e6b078fd8213a3b2cb43028fda39fdf">&#9670;&#160;</a></span>SetConsiderationData()</h2>
 
@@ -155,16 +247,7 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">InName</td><td>Name of the consideration. </td></tr>
-    <tr><td class="paramname">InInputValue</td><td>Raw input value. (Currently unused) </td></tr>
-    <tr><td class="paramname">InScore</td><td>Evaluated consideration score.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Updates the consideration row widgets.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">InName</td><td>Name of the consideration. </td></tr>
-    <tr><td class="paramname">InInputValue</td><td>Raw input value. (Currently unused) </td></tr>
+    <tr><td class="paramname">InInputValue</td><td>Raw input value. </td></tr>
     <tr><td class="paramname">InScore</td><td>Evaluated consideration score. </td></tr>
   </table>
   </dd>
@@ -172,7 +255,61 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a02997dd667eab1a322dbe978022c9394" name="a02997dd667eab1a322dbe978022c9394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02997dd667eab1a322dbe978022c9394">&#9670;&#160;</a></span>SetSelected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UUtilityAIConsiderationRow::SetSelected </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>bIsSelected</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the row's selection state without broadcasting a selection event.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bIsSelected</td><td>Whether the row should be selected.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Sets the checkbox state without triggering selection callbacks.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bIsSelected</td><td>Whether this row should be selected. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a7e01993ae26903b6898a213f85e8b9bf" name="a7e01993ae26903b6898a213f85e8b9bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e01993ae26903b6898a213f85e8b9bf">&#9670;&#160;</a></span>bUpdatingSelection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UUtilityAIConsiderationRow::bUpdatingSelection = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Prevents programmatic checkbox changes from triggering callbacks. </p>
+
+</div>
+</div>
 <a id="a1716218c93b48eb13293d4c5f3f06f5c" name="a1716218c93b48eb13293d4c5f3f06f5c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1716218c93b48eb13293d4c5f3f06f5c">&#9670;&#160;</a></span>ConsiderationBar</h2>
 
@@ -193,6 +330,29 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Displays the consideration score as a progress bar. </p>
+
+</div>
+</div>
+<a id="a7331995d36382fce03c96f6d202b9132" name="a7331995d36382fce03c96f6d202b9132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7331995d36382fce03c96f6d202b9132">&#9670;&#160;</a></span>ConsiderationCheckBox</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TObjectPtr&lt;UCheckBox&gt; UUtilityAIConsiderationRow::ConsiderationCheckBox</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Checkbox used to select this consideration's response curve. </p>
 
 </div>
 </div>
@@ -242,9 +402,24 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae5e93d348e5196e2dce6849d17603cfd" name="ae5e93d348e5196e2dce6849d17603cfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e93d348e5196e2dce6849d17603cfd">&#9670;&#160;</a></span>OnSelectionChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FOnUtilityAIConsiderationSelectionChanged UUtilityAIConsiderationRow::OnSelectionChanged</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fired when the user changes this row's selection state. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Public/<a class="el" href="_utility_a_i_consideration_row_8h_source.html">UtilityAIConsiderationRow.h</a></li>
-<li>Private/<b>UtilityAIConsiderationRow.cpp</b></li>
+<li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Public/<a class="el" href="_utility_a_i_consideration_row_8h_source.html">UtilityAIConsiderationRow.h</a></li>
+<li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Private/<b>UtilityAIConsiderationRow.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

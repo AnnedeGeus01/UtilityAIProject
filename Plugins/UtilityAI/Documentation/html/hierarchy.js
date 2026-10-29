@@ -23,6 +23,7 @@ var hierarchy =
     [ "UUserWidget", null, [
       [ "UUtilityAIActionRow", "class_u_utility_a_i_action_row.html", null ],
       [ "UUtilityAIConsiderationRow", "class_u_utility_a_i_consideration_row.html", null ],
-      [ "UUtilityAIDebugWidget", "class_u_utility_a_i_debug_widget.html", null ]
+      [ "UUtilityAIDebugWidget", "class_u_utility_a_i_debug_widget.html", null ],
+      [ "UUtilityAIResponseCurveGraph", "class_u_utility_a_i_response_curve_graph.html", null ]
     ] ]
 ];

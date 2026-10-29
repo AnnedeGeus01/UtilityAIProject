@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Utility AI: Public/UtilityAIConsiderationRow.h Source File</title>
+<title>Utility AI: C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Public/UtilityAIConsiderationRow.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,46 +100,74 @@ $(function(){initNavTree('_utility_a_i_consideration_row_8h_source.html','','');
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span>UTextBlock;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span>UProgressBar;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>UCLASS()</div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_consideration_row.html">   15</a></span>class UTILITYAI_API <a class="code hl_class" href="class_u_utility_a_i_consideration_row.html">UUtilityAIConsiderationRow</a> : public UUserWidget</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    GENERATED_BODY()</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI|Debug&quot;</span>)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_utility_a_i_consideration_row.html#a5e6b078fd8213a3b2cb43028fda39fdf">SetConsiderationData</a>(</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        FName InName,</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">float</span> InInputValue,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">float</span> InScore</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    );</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    UPROPERTY(meta = (BindWidget))</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_consideration_row.html#a52f5c667ed17b278ec9941cff1b5b9b9">   39</a></span>    TObjectPtr&lt;UTextBlock&gt; <a class="code hl_variable" href="class_u_utility_a_i_consideration_row.html#a52f5c667ed17b278ec9941cff1b5b9b9">ConsiderationName</a>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    UPROPERTY(meta = (BindWidget))</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_consideration_row.html#a1716218c93b48eb13293d4c5f3f06f5c">   43</a></span>    TObjectPtr&lt;UProgressBar&gt; <a class="code hl_variable" href="class_u_utility_a_i_consideration_row.html#a1716218c93b48eb13293d4c5f3f06f5c">ConsiderationBar</a>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    UPROPERTY(meta = (BindWidget))</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_consideration_row.html#a821efd9555d757f2e84d91c6e984c65c">   47</a></span>    TObjectPtr&lt;UTextBlock&gt; <a class="code hl_variable" href="class_u_utility_a_i_consideration_row.html#a821efd9555d757f2e84d91c6e984c65c">ConsiderationScore</a>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span>UCheckBox;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="class_u_utility_a_i_consideration_row.html">UUtilityAIConsiderationRow</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>DECLARE_MULTICAST_DELEGATE_TwoParams(</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    FOnUtilityAIConsiderationSelectionChanged,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_class" href="class_u_utility_a_i_consideration_row.html">UUtilityAIConsiderationRow</a>*,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>UCLASS()</div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_consideration_row.html">   30</a></span>class UTILITYAI_API <a class="code hl_class" href="class_u_utility_a_i_consideration_row.html">UUtilityAIConsiderationRow</a> : public UUserWidget</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    GENERATED_BODY()</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_consideration_row.html#ae5e93d348e5196e2dce6849d17603cfd">   37</a></span>    FOnUtilityAIConsiderationSelectionChanged <a class="code hl_variable" href="class_u_utility_a_i_consideration_row.html#ae5e93d348e5196e2dce6849d17603cfd">OnSelectionChanged</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI|Debug&quot;</span>)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    void <a class="code hl_function" href="class_u_utility_a_i_consideration_row.html#a5e6b078fd8213a3b2cb43028fda39fdf">SetConsiderationData</a>(</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        FName InName,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">float</span> InInputValue,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordtype">float</span> InScore</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    );</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_utility_a_i_consideration_row.html#a02997dd667eab1a322dbe978022c9394">SetSelected</a>(<span class="keywordtype">bool</span> bIsSelected);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>protected:</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    virtual <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_utility_a_i_consideration_row.html#aa7338d2a8f4deaf359743d2c6b982e63">NativeOnInitialized</a>() override;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    UFUNCTION()</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_utility_a_i_consideration_row.html#a41390ce3d0bdef744b9cfa31f613b7ed">HandleCheckStateChanged</a>(<span class="keywordtype">bool</span> bIsChecked);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    UPROPERTY(meta = (BindWidget))</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_consideration_row.html#a7331995d36382fce03c96f6d202b9132">   71</a></span>    TObjectPtr&lt;UCheckBox&gt; <a class="code hl_variable" href="class_u_utility_a_i_consideration_row.html#a7331995d36382fce03c96f6d202b9132">ConsiderationCheckBox</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    UPROPERTY(meta = (BindWidget))</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_consideration_row.html#a52f5c667ed17b278ec9941cff1b5b9b9">   75</a></span>    TObjectPtr&lt;UTextBlock&gt; <a class="code hl_variable" href="class_u_utility_a_i_consideration_row.html#a52f5c667ed17b278ec9941cff1b5b9b9">ConsiderationName</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    UPROPERTY(meta = (BindWidget))</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_consideration_row.html#a1716218c93b48eb13293d4c5f3f06f5c">   79</a></span>    TObjectPtr&lt;UProgressBar&gt; <a class="code hl_variable" href="class_u_utility_a_i_consideration_row.html#a1716218c93b48eb13293d4c5f3f06f5c">ConsiderationBar</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    UPROPERTY(meta = (BindWidget))</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_consideration_row.html#a821efd9555d757f2e84d91c6e984c65c">   83</a></span>    TObjectPtr&lt;UTextBlock&gt; <a class="code hl_variable" href="class_u_utility_a_i_consideration_row.html#a821efd9555d757f2e84d91c6e984c65c">ConsiderationScore</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_consideration_row.html#a7e01993ae26903b6898a213f85e8b9bf">   86</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_u_utility_a_i_consideration_row.html#a7e01993ae26903b6898a213f85e8b9bf">bUpdatingSelection</a> = false;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
 </div>
-<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html">UUtilityAIConsiderationRow</a></div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.h:16</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a1716218c93b48eb13293d4c5f3f06f5c"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a1716218c93b48eb13293d4c5f3f06f5c">UUtilityAIConsiderationRow::ConsiderationBar</a></div><div class="ttdeci">TObjectPtr&lt; UProgressBar &gt; ConsiderationBar</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.h:43</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a52f5c667ed17b278ec9941cff1b5b9b9"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a52f5c667ed17b278ec9941cff1b5b9b9">UUtilityAIConsiderationRow::ConsiderationName</a></div><div class="ttdeci">TObjectPtr&lt; UTextBlock &gt; ConsiderationName</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.h:39</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a5e6b078fd8213a3b2cb43028fda39fdf"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a5e6b078fd8213a3b2cb43028fda39fdf">UUtilityAIConsiderationRow::SetConsiderationData</a></div><div class="ttdeci">void SetConsiderationData(FName InName, float InInputValue, float InScore)</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.cpp:13</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a821efd9555d757f2e84d91c6e984c65c"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a821efd9555d757f2e84d91c6e984c65c">UUtilityAIConsiderationRow::ConsiderationScore</a></div><div class="ttdeci">TObjectPtr&lt; UTextBlock &gt; ConsiderationScore</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.h:47</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html">UUtilityAIConsiderationRow</a></div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.h:31</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a02997dd667eab1a322dbe978022c9394"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a02997dd667eab1a322dbe978022c9394">UUtilityAIConsiderationRow::SetSelected</a></div><div class="ttdeci">void SetSelected(bool bIsSelected)</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.cpp:66</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a1716218c93b48eb13293d4c5f3f06f5c"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a1716218c93b48eb13293d4c5f3f06f5c">UUtilityAIConsiderationRow::ConsiderationBar</a></div><div class="ttdeci">TObjectPtr&lt; UProgressBar &gt; ConsiderationBar</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.h:79</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a41390ce3d0bdef744b9cfa31f613b7ed"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a41390ce3d0bdef744b9cfa31f613b7ed">UUtilityAIConsiderationRow::HandleCheckStateChanged</a></div><div class="ttdeci">void HandleCheckStateChanged(bool bIsChecked)</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.cpp:83</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a52f5c667ed17b278ec9941cff1b5b9b9"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a52f5c667ed17b278ec9941cff1b5b9b9">UUtilityAIConsiderationRow::ConsiderationName</a></div><div class="ttdeci">TObjectPtr&lt; UTextBlock &gt; ConsiderationName</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.h:75</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a5e6b078fd8213a3b2cb43028fda39fdf"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a5e6b078fd8213a3b2cb43028fda39fdf">UUtilityAIConsiderationRow::SetConsiderationData</a></div><div class="ttdeci">void SetConsiderationData(FName InName, float InInputValue, float InScore)</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.cpp:30</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a7331995d36382fce03c96f6d202b9132"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a7331995d36382fce03c96f6d202b9132">UUtilityAIConsiderationRow::ConsiderationCheckBox</a></div><div class="ttdeci">TObjectPtr&lt; UCheckBox &gt; ConsiderationCheckBox</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.h:71</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a7e01993ae26903b6898a213f85e8b9bf"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a7e01993ae26903b6898a213f85e8b9bf">UUtilityAIConsiderationRow::bUpdatingSelection</a></div><div class="ttdeci">bool bUpdatingSelection</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.h:86</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_a821efd9555d757f2e84d91c6e984c65c"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#a821efd9555d757f2e84d91c6e984c65c">UUtilityAIConsiderationRow::ConsiderationScore</a></div><div class="ttdeci">TObjectPtr&lt; UTextBlock &gt; ConsiderationScore</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.h:83</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_aa7338d2a8f4deaf359743d2c6b982e63"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#aa7338d2a8f4deaf359743d2c6b982e63">UUtilityAIConsiderationRow::NativeOnInitialized</a></div><div class="ttdeci">virtual void NativeOnInitialized() override</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.cpp:10</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_consideration_row_html_ae5e93d348e5196e2dce6849d17603cfd"><div class="ttname"><a href="class_u_utility_a_i_consideration_row.html#ae5e93d348e5196e2dce6849d17603cfd">UUtilityAIConsiderationRow::OnSelectionChanged</a></div><div class="ttdeci">FOnUtilityAIConsiderationSelectionChanged OnSelectionChanged</div><div class="ttdef"><b>Definition</b> UtilityAIConsiderationRow.h:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Public</b></li><li class="navelem"><b>UtilityAIConsiderationRow.h</b></li>
+    <li class="navelem"><b>UtilityAIProject</b></li><li class="navelem"><b>Plugins</b></li><li class="navelem"><b>UtilityAI</b></li><li class="navelem"><b>Source</b></li><li class="navelem"><b>UtilityAI</b></li><li class="navelem"><b>Public</b></li><li class="navelem"><b>UtilityAIConsiderationRow.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

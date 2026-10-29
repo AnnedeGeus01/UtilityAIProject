@@ -131,6 +131,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:af547eb573e5d1c49b28f3a5435ab92f5" id="r_af547eb573e5d1c49b28f3a5435ab92f5"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; UTextBlock &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af547eb573e5d1c49b28f3a5435ab92f5">CombinationMethodText</a></td></tr>
 <tr class="memitem:aa9b04069ff5764a2555937d5d0d4c482" id="r_aa9b04069ff5764a2555937d5d0d4c482"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; UVerticalBox &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9b04069ff5764a2555937d5d0d4c482">ActionList</a></td></tr>
 <tr class="memitem:ab88739672a3f41286b68e8b4a67e18bb" id="r_ab88739672a3f41286b68e8b4a67e18bb"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; UVerticalBox &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab88739672a3f41286b68e8b4a67e18bb">ConsiderationList</a></td></tr>
+<tr class="memitem:a33db0f994824ce1361dc1ca9e825f6cc" id="r_a33db0f994824ce1361dc1ca9e825f6cc"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; <a class="el" href="class_u_utility_a_i_response_curve_graph.html">UUtilityAIResponseCurveGraph</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33db0f994824ce1361dc1ca9e825f6cc">ResponseCurveGraph</a></td></tr>
 <tr class="memitem:ab44b2a490cc998d834ffa34bd769061c" id="r_ab44b2a490cc998d834ffa34bd769061c"><td class="memItemLeft" align="right" valign="top">TSubclassOf&lt; <a class="el" href="class_u_utility_a_i_action_row.html">UUtilityAIActionRow</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab44b2a490cc998d834ffa34bd769061c">ActionRowClass</a></td></tr>
 <tr class="memitem:a1d2566e450a47585386c441c1b082e8a" id="r_a1d2566e450a47585386c441c1b082e8a"><td class="memItemLeft" align="right" valign="top">TArray&lt; TObjectPtr&lt; <a class="el" href="class_u_utility_a_i_action_row.html">UUtilityAIActionRow</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d2566e450a47585386c441c1b082e8a">ActionRows</a></td></tr>
 <tr class="memitem:a8f298f7bd570344979a157170582b131" id="r_a8f298f7bd570344979a157170582b131"><td class="memItemLeft" align="right" valign="top">TSubclassOf&lt; <a class="el" href="class_u_utility_a_i_consideration_row.html">UUtilityAIConsiderationRow</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f298f7bd570344979a157170582b131">ConsiderationRowClass</a></td></tr>
@@ -138,7 +139,7 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Displays runtime utility AI decisions and consideration scores.</p>
-<p>Refreshes the current action, action utilities, selected action considerations, and combination method. </p>
+<p>Refreshes action utilities, the selected action's considerations, and the response curve for the selected consideration. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a42f3df3361f15a18554792ea27a52d27" name="a42f3df3361f15a18554792ea27a52d27"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a42f3df3361f15a18554792ea27a52d27">&#9670;&#160;</a></span>NativeTick()</h2>
@@ -166,7 +167,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Updates the debug display at regular intervals. Same as the descision interval set in the Utiliti AI Component.</p>
+<p>Updates the debug display at regular intervals.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">MyGeometry</td><td>Geometry of the widget. </td></tr>
@@ -174,7 +175,7 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Refreshes the display every couple of seconds, defined in the Utility AI component</p>
+<p>Refreshes the display using the component's decision interval.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">MyGeometry</td><td>Geometry of the widget. </td></tr>
@@ -236,7 +237,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Contains rows for all available actions. </p>
+<p>Contains the reusable action debug rows. </p>
 
 </div>
 </div>
@@ -259,7 +260,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Widget class used to create action rows. </p>
+<p>Widget class used to create action debug rows. </p>
 
 </div>
 </div>
@@ -282,7 +283,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Reusable action row widgets. </p>
+<p>Reusable action debug row instances. </p>
 
 </div>
 </div>
@@ -328,7 +329,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Contains rows for the selected action's considerations. </p>
+<p>Contains the reusable consideration debug rows. </p>
 
 </div>
 </div>
@@ -351,7 +352,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Widget class used to create consideration rows. </p>
+<p>Widget class used to create consideration debug rows. </p>
 
 </div>
 </div>
@@ -374,7 +375,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Reusable consideration row widgets. </p>
+<p>Reusable consideration debug row instances. </p>
 
 </div>
 </div>
@@ -401,6 +402,29 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a33db0f994824ce1361dc1ca9e825f6cc" name="a33db0f994824ce1361dc1ca9e825f6cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33db0f994824ce1361dc1ca9e825f6cc">&#9670;&#160;</a></span>ResponseCurveGraph</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TObjectPtr&lt;<a class="el" href="class_u_utility_a_i_response_curve_graph.html">UUtilityAIResponseCurveGraph</a>&gt; UUtilityAIDebugWidget::ResponseCurveGraph</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Displays the selected consideration's response curve. </p>
+
+</div>
+</div>
 <a id="a69b7f2485aab4c71ed428dd717f57253" name="a69b7f2485aab4c71ed428dd717f57253"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69b7f2485aab4c71ed428dd717f57253">&#9670;&#160;</a></span>SelectedActionText</h2>
 
@@ -420,7 +444,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Displays the selected action name. </p>
+<p>Displays the action selected by the decision manager. </p>
 
 </div>
 </div>
@@ -443,13 +467,13 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Utility AI component being monitored. </p>
+<p>Component supplying runtime utility AI debug data. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Public/<a class="el" href="_utility_a_i_debug_widget_8h_source.html">UtilityAIDebugWidget.h</a></li>
-<li>Private/<b>UtilityAIDebugWidget.cpp</b></li>
+<li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Public/<a class="el" href="_utility_a_i_debug_widget_8h_source.html">UtilityAIDebugWidget.h</a></li>
+<li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Private/<b>UtilityAIDebugWidget.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
