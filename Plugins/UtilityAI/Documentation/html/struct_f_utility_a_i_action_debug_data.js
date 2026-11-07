@@ -1,8 +1,8 @@
 var struct_f_utility_a_i_action_debug_data =
 [
-    [ "UPROPERTY", "struct_f_utility_a_i_action_debug_data.html#a225fac8388f4c4080130fdc85f18faa9", null ],
-    [ "UPROPERTY", "struct_f_utility_a_i_action_debug_data.html#aed4f541da5d4fe84db9ba4d3278908e5", null ],
-    [ "UPROPERTY", "struct_f_utility_a_i_action_debug_data.html#a7353ab69723987ffc0ed0940f08db012", null ],
-    [ "UPROPERTY", "struct_f_utility_a_i_action_debug_data.html#af4d04bb9bff25f4064ea338e813b7d33", null ],
-    [ "UPROPERTY", "struct_f_utility_a_i_action_debug_data.html#ab51f0d75721dbf8a77b837495dc3fe56", null ]
+    [ "bSelected", "struct_f_utility_a_i_action_debug_data.html#a42ed13f7bc7d191869c2dabfa96e977a", null ],
+    [ "CombinationMethod", "struct_f_utility_a_i_action_debug_data.html#a6da6bb8410a24c34b4e6cf7e46d5e125", null ],
+    [ "Considerations", "struct_f_utility_a_i_action_debug_data.html#aaf84114f2d2f8d4875957a05d24ea9a5", null ],
+    [ "Name", "struct_f_utility_a_i_action_debug_data.html#a88162695d70b4b485d3ad886e037c3d0", null ],
+    [ "Utility", "struct_f_utility_a_i_action_debug_data.html#ac81ae462a24e66fa579886f094ac4d80", null ]
 ];

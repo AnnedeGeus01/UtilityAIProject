@@ -99,20 +99,82 @@ $(function(){initNavTree('class_u_utility_a_i_action.html','','class_u_utility_a
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adc724ac3548acf7c7af19988bcd4fb97" id="r_adc724ac3548acf7c7af19988bcd4fb97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc724ac3548acf7c7af19988bcd4fb97">UPROPERTY</a> (EditAnywhere, BlueprintReadWrite, Category=&quot;Utility AI&quot;) <a class="el" href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90c">EUtilityAICombinationMethod</a> CombinationMethod</td></tr>
 <tr class="memitem:a0925d59fde1fb2dcb635d7a1d7827a3c" id="r_a0925d59fde1fb2dcb635d7a1d7827a3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0925d59fde1fb2dcb635d7a1d7827a3c">Execute</a> ()</td></tr>
 <tr class="memitem:a818c43296dd443963ab9ada9a46d5ec3" id="r_a818c43296dd443963ab9ada9a46d5ec3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a818c43296dd443963ab9ada9a46d5ec3">Execute_Implementation</a> ()</td></tr>
-<tr class="memitem:a36e4d857ac6c91557d2c9082b0dd1f22" id="r_a36e4d857ac6c91557d2c9082b0dd1f22"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36e4d857ac6c91557d2c9082b0dd1f22">UFUNCTION</a> (BlueprintCallable, Category=&quot;Utility AI&quot;) virtual float CalculateUtility(const <a class="el" href="class_u_utility_a_i_context.html">UUtilityAIContext</a> *Context) const</td></tr>
+<tr class="memitem:ad1abbb2aed3b05de141b5cf119fdb964" id="r_ad1abbb2aed3b05de141b5cf119fdb964"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1abbb2aed3b05de141b5cf119fdb964">CalculateUtility</a> (const <a class="el" href="class_u_utility_a_i_context.html">UUtilityAIContext</a> *Context) const</td></tr>
 <tr class="memitem:a73ffdf56fa475589c465d2447f1a6a67" id="r_a73ffdf56fa475589c465d2447f1a6a67"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73ffdf56fa475589c465d2447f1a6a67">CalculateUtilityWithDebug</a> (const <a class="el" href="class_u_utility_a_i_context.html">UUtilityAIContext</a> *Context, TArray&lt; <a class="el" href="struct_f_utility_a_i_consideration_debug_data.html">FUtilityAIConsiderationDebugData</a> &gt; &amp;OutConsiderations) const</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a98aa9133d8eac50e9a97c56021a03d33" id="r_a98aa9133d8eac50e9a97c56021a03d33"><td class="memItemLeft" align="right" valign="top">TArray&lt; TObjectPtr&lt; <a class="el" href="class_u_utility_a_i_consideration.html">UUtilityAIConsideration</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98aa9133d8eac50e9a97c56021a03d33">Considerations</a></td></tr>
+<tr class="memitem:a4840ef9bf5e03c39c82df315da54fb85" id="r_a4840ef9bf5e03c39c82df315da54fb85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90c">EUtilityAICombinationMethod</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4840ef9bf5e03c39c82df315da54fb85">CombinationMethod</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for utility AI actions.</p>
 <p>Actions calculate utility from their considerations and define behaviour to execute when selected by the decision manager. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ad1abbb2aed3b05de141b5cf119fdb964" name="ad1abbb2aed3b05de141b5cf119fdb964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1abbb2aed3b05de141b5cf119fdb964">&#9670;&#160;</a></span>CalculateUtility()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UUtilityAIAction::CalculateUtility </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_u_utility_a_i_context.html">UUtilityAIContext</a> *</td>          <td class="paramname"><span class="paramname"><em>Context</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Calculates the action's utility.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Context</td><td>Context containing values used by considerations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Combined utility score.</dd></dl>
+<p>Calculates utility using the configured combination method.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Context</td><td>Context containing values used by considerations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Combined utility score. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_utility_a_i_action_ad1abbb2aed3b05de141b5cf119fdb964_cgraph.png" border="0" usemap="#aclass_u_utility_a_i_action_ad1abbb2aed3b05de141b5cf119fdb964_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_u_utility_a_i_action_ad1abbb2aed3b05de141b5cf119fdb964_cgraph" id="aclass_u_utility_a_i_action_ad1abbb2aed3b05de141b5cf119fdb964_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,48"/>
+<area shape="rect" href="class_u_utility_a_i_action.html#a73ffdf56fa475589c465d2447f1a6a67" title=" " alt="" coords="232,5,410,48"/>
+<area shape="poly" title=" " alt="" coords="184,24,216,24,216,29,184,29"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_utility_a_i_action_ad1abbb2aed3b05de141b5cf119fdb964_icgraph.png" border="0" usemap="#aclass_u_utility_a_i_action_ad1abbb2aed3b05de141b5cf119fdb964_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_u_utility_a_i_action_ad1abbb2aed3b05de141b5cf119fdb964_icgraph" id="aclass_u_utility_a_i_action_ad1abbb2aed3b05de141b5cf119fdb964_icgraph">
+<area shape="rect" title=" " alt="" coords="225,21,403,64"/>
+<area shape="rect" href="class_u_utility_a_i_action.html#a0925d59fde1fb2dcb635d7a1d7827a3c" title=" " alt="" coords="5,29,177,56"/>
+<area shape="poly" title=" " alt="" coords="209,45,177,45,177,40,209,40"/>
+<area shape="poly" title=" " alt="" coords="129,16,116,10,91,8,68,10,55,15,52,20,58,27,53,30,47,21,51,11,66,5,91,3,117,5,132,12"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a73ffdf56fa475589c465d2447f1a6a67" name="a73ffdf56fa475589c465d2447f1a6a67"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73ffdf56fa475589c465d2447f1a6a67">&#9670;&#160;</a></span>CalculateUtilityWithDebug()</h2>
 
@@ -155,13 +217,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_u_utility_a_i_action_a73ffdf56fa475589c465d2447f1a6a67_icgraph.png" border="0" usemap="#aclass_u_utility_a_i_action_a73ffdf56fa475589c465d2447f1a6a67_icgraph" loading="lazy" alt=""/></div>
 <map name="aclass_u_utility_a_i_action_a73ffdf56fa475589c465d2447f1a6a67_icgraph" id="aclass_u_utility_a_i_action_a73ffdf56fa475589c465d2447f1a6a67_icgraph">
-<area shape="rect" title=" " alt="" coords="511,21,689,64"/>
-<area shape="rect" href="class_u_utility_a_i_action.html#a36e4d857ac6c91557d2c9082b0dd1f22" title=" " alt="" coords="260,29,463,56"/>
-<area shape="poly" title=" " alt="" coords="495,45,464,45,464,40,495,40"/>
-<area shape="poly" title=" " alt="" coords="403,17,389,10,361,8,336,10,322,15,319,20,325,27,321,31,314,21,319,11,335,5,361,3,390,5,405,12"/>
-<area shape="rect" href="class_u_utility_a_i_action.html#adc724ac3548acf7c7af19988bcd4fb97" title=" " alt="" coords="5,29,212,56"/>
-<area shape="poly" title=" " alt="" coords="244,45,212,45,212,40,244,40"/>
-<area shape="poly" title=" " alt="" coords="153,17,138,10,108,8,82,10,67,15,64,20,70,27,66,31,59,21,64,11,81,5,109,3,139,5,155,12"/>
+<area shape="rect" title=" " alt="" coords="451,35,629,77"/>
+<area shape="rect" href="class_u_utility_a_i_action.html#ad1abbb2aed3b05de141b5cf119fdb964" title=" " alt="" coords="225,5,403,48"/>
+<area shape="poly" title=" " alt="" coords="435,45,403,41,404,36,436,40"/>
+<area shape="rect" href="class_u_utility_a_i_action.html#a0925d59fde1fb2dcb635d7a1d7827a3c" title=" " alt="" coords="5,43,177,69"/>
+<area shape="poly" title=" " alt="" coords="435,62,403,63,225,63,177,62,177,56,225,57,403,57,435,57"/>
+<area shape="poly" title=" " alt="" coords="209,43,177,47,177,42,209,38"/>
+<area shape="poly" title=" " alt="" coords="129,30,116,24,91,21,68,23,55,28,52,33,58,41,53,44,47,34,51,24,66,18,91,16,117,19,132,25"/>
 </map>
 </div>
 
@@ -188,10 +250,15 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_u_utility_a_i_action_a0925d59fde1fb2dcb635d7a1d7827a3c_cgraph.png" border="0" usemap="#aclass_u_utility_a_i_action_a0925d59fde1fb2dcb635d7a1d7827a3c_cgraph" loading="lazy" alt=""/></div>
 <map name="aclass_u_utility_a_i_action_a0925d59fde1fb2dcb635d7a1d7827a3c_cgraph" id="aclass_u_utility_a_i_action_a0925d59fde1fb2dcb635d7a1d7827a3c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,177,56"/>
-<area shape="poly" title=" " alt="" coords="54,30,47,21,52,11,67,5,91,3,117,5,131,12,129,16,116,10,91,8,68,10,55,15,53,20,58,27"/>
-<area shape="rect" href="class_u_utility_a_i_action.html#a818c43296dd443963ab9ada9a46d5ec3" title=" " alt="" coords="225,21,396,64"/>
-<area shape="poly" title=" " alt="" coords="177,40,209,40,209,45,177,45"/>
+<area shape="rect" title=" " alt="" coords="5,72,177,99"/>
+<area shape="poly" title=" " alt="" coords="53,73,47,63,51,53,66,47,91,45,117,48,132,54,129,59,116,53,91,51,68,53,55,57,52,63,58,70"/>
+<area shape="rect" href="class_u_utility_a_i_action.html#ad1abbb2aed3b05de141b5cf119fdb964" title=" " alt="" coords="225,5,403,48"/>
+<area shape="poly" title=" " alt="" coords="144,69,215,50,216,55,145,74"/>
+<area shape="rect" href="class_u_utility_a_i_action.html#a73ffdf56fa475589c465d2447f1a6a67" title=" " alt="" coords="451,35,629,77"/>
+<area shape="poly" title=" " alt="" coords="177,77,435,60,435,65,177,82"/>
+<area shape="rect" href="class_u_utility_a_i_action.html#a818c43296dd443963ab9ada9a46d5ec3" title=" " alt="" coords="228,123,400,165"/>
+<area shape="poly" title=" " alt="" coords="145,97,216,116,215,121,144,102"/>
+<area shape="poly" title=" " alt="" coords="404,36,436,40,435,45,403,41"/>
 </map>
 </div>
 <div class="dynheader">
@@ -245,109 +312,24 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a36e4d857ac6c91557d2c9082b0dd1f22" name="a36e4d857ac6c91557d2c9082b0dd1f22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36e4d857ac6c91557d2c9082b0dd1f22">&#9670;&#160;</a></span>UFUNCTION()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">UUtilityAIAction::UFUNCTION </td>
-          <td>(</td>
-          <td class="paramtype">BlueprintCallable</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Category</td>          <td class="paramname"><span class="paramname"><em></em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Utility&#160;AI&quot;</span>&#160;) const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Calculates the action's utility.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Context</td><td>Context containing values used by considerations. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Combined utility score. </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_action_a36e4d857ac6c91557d2c9082b0dd1f22_cgraph.png" border="0" usemap="#aclass_u_utility_a_i_action_a36e4d857ac6c91557d2c9082b0dd1f22_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_u_utility_a_i_action_a36e4d857ac6c91557d2c9082b0dd1f22_cgraph" id="aclass_u_utility_a_i_action_a36e4d857ac6c91557d2c9082b0dd1f22_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,209,56"/>
-<area shape="poly" title=" " alt="" coords="67,31,60,21,65,11,81,5,107,3,136,5,151,12,149,17,134,10,107,8,82,10,68,15,65,20,71,27"/>
-<area shape="rect" href="class_u_utility_a_i_action.html#a73ffdf56fa475589c465d2447f1a6a67" title=" " alt="" coords="257,21,435,64"/>
-<area shape="poly" title=" " alt="" coords="209,40,241,40,241,45,209,45"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_action_a36e4d857ac6c91557d2c9082b0dd1f22_icgraph.png" border="0" usemap="#aclass_u_utility_a_i_action_a36e4d857ac6c91557d2c9082b0dd1f22_icgraph" loading="lazy" alt=""/></div>
-<map name="aclass_u_utility_a_i_action_a36e4d857ac6c91557d2c9082b0dd1f22_icgraph" id="aclass_u_utility_a_i_action_a36e4d857ac6c91557d2c9082b0dd1f22_icgraph">
-<area shape="rect" title=" " alt="" coords="260,29,463,56"/>
-<area shape="poly" title=" " alt="" coords="405,17,391,10,361,8,335,10,320,15,317,20,323,27,319,31,311,21,317,11,334,5,361,3,392,5,408,12"/>
-<area shape="rect" href="class_u_utility_a_i_action.html#adc724ac3548acf7c7af19988bcd4fb97" title=" " alt="" coords="5,29,212,56"/>
-<area shape="poly" title=" " alt="" coords="244,45,212,45,212,40,244,40"/>
-<area shape="poly" title=" " alt="" coords="153,17,138,10,108,8,82,10,67,15,64,20,70,27,66,31,59,21,64,11,81,5,109,3,139,5,155,12"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="adc724ac3548acf7c7af19988bcd4fb97" name="adc724ac3548acf7c7af19988bcd4fb97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc724ac3548acf7c7af19988bcd4fb97">&#9670;&#160;</a></span>UPROPERTY()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">UUtilityAIAction::UPROPERTY </td>
-          <td>(</td>
-          <td class="paramtype">EditAnywhere</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">BlueprintReadWrite</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Category</td>          <td class="paramname"><span class="paramname"><em></em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Utility&#160;AI&quot;</span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Method used to combine consideration scores. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_action_adc724ac3548acf7c7af19988bcd4fb97_cgraph.png" border="0" usemap="#aclass_u_utility_a_i_action_adc724ac3548acf7c7af19988bcd4fb97_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_u_utility_a_i_action_adc724ac3548acf7c7af19988bcd4fb97_cgraph" id="aclass_u_utility_a_i_action_adc724ac3548acf7c7af19988bcd4fb97_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,212,56"/>
-<area shape="poly" title=" " alt="" coords="66,31,59,21,64,11,81,5,109,3,139,5,155,12,153,17,138,10,108,8,82,10,67,15,64,20,70,27"/>
-<area shape="rect" href="class_u_utility_a_i_action.html#a36e4d857ac6c91557d2c9082b0dd1f22" title=" " alt="" coords="260,29,463,56"/>
-<area shape="poly" title=" " alt="" coords="212,40,244,40,244,45,212,45"/>
-<area shape="poly" title=" " alt="" coords="321,31,314,21,319,11,335,5,361,3,390,5,405,12,403,17,389,10,361,8,336,10,322,15,319,20,325,27"/>
-<area shape="rect" href="class_u_utility_a_i_action.html#a73ffdf56fa475589c465d2447f1a6a67" title=" " alt="" coords="511,21,689,64"/>
-<area shape="poly" title=" " alt="" coords="464,40,495,40,495,45,464,45"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_action_adc724ac3548acf7c7af19988bcd4fb97_icgraph.png" border="0" usemap="#aclass_u_utility_a_i_action_adc724ac3548acf7c7af19988bcd4fb97_icgraph" loading="lazy" alt=""/></div>
-<map name="aclass_u_utility_a_i_action_adc724ac3548acf7c7af19988bcd4fb97_icgraph" id="aclass_u_utility_a_i_action_adc724ac3548acf7c7af19988bcd4fb97_icgraph">
-<area shape="rect" title=" " alt="" coords="5,29,212,56"/>
-<area shape="poly" title=" " alt="" coords="144,16,132,10,108,8,87,10,75,15,73,20,78,27,74,30,67,21,72,11,86,5,109,3,133,5,146,12"/>
-</map>
-</div>
-
-</div>
-</div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a4840ef9bf5e03c39c82df315da54fb85" name="a4840ef9bf5e03c39c82df315da54fb85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4840ef9bf5e03c39c82df315da54fb85">&#9670;&#160;</a></span>CombinationMethod</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90c">EUtilityAICombinationMethod</a> UUtilityAIAction::CombinationMethod</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">        EUtilityAICombinationMethod::Multiply</div>
+</div><!-- fragment --><p>Method used to combine consideration scores. </p>
+
+</div>
+</div>
 <a id="a98aa9133d8eac50e9a97c56021a03d33" name="a98aa9133d8eac50e9a97c56021a03d33"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a98aa9133d8eac50e9a97c56021a03d33">&#9670;&#160;</a></span>Considerations</h2>
 

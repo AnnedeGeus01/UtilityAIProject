@@ -99,35 +99,39 @@ $(function(){initNavTree('class_u_utility_a_i_consideration.html','','class_u_ut
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0721168e6f9d09c5fca05486cf9ecd0d" id="r_a0721168e6f9d09c5fca05486cf9ecd0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0721168e6f9d09c5fca05486cf9ecd0d">UPROPERTY</a> (EditAnywhere, BlueprintReadWrite, Category=&quot;Utility AI&quot;) FName Name</td></tr>
-<tr class="memitem:a2a65220e22bfd5a2cc4f2ce46f792fbc" id="r_a2a65220e22bfd5a2cc4f2ce46f792fbc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a65220e22bfd5a2cc4f2ce46f792fbc">UFUNCTION</a> (BlueprintCallable, Category=&quot;Utility AI&quot;) virtual float Evaluate(const <a class="el" href="class_u_utility_a_i_context.html">UUtilityAIContext</a> *Context) const</td></tr>
+<tr class="memitem:a73c9ac2d4141ad921493c45aca996e09" id="r_a73c9ac2d4141ad921493c45aca996e09"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73c9ac2d4141ad921493c45aca996e09">Evaluate</a> (const <a class="el" href="class_u_utility_a_i_context.html">UUtilityAIContext</a> *Context) const</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a8e498158a3a8966d758bb3ae1db8a00a" id="r_a8e498158a3a8966d758bb3ae1db8a00a"><td class="memItemLeft" align="right" valign="top">FName&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e498158a3a8966d758bb3ae1db8a00a">Name</a></td></tr>
 <tr class="memitem:a6f7dc13208e7341ac6def0db33e5c9be" id="r_a6f7dc13208e7341ac6def0db33e5c9be"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; <a class="el" href="class_u_utility_a_i_data_source.html">UUtilityAIDataSource</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f7dc13208e7341ac6def0db33e5c9be">DataSource</a></td></tr>
-<tr class="memitem:a9a4e1ff874a12cc22174bb4d2882dae0" id="r_a9a4e1ff874a12cc22174bb4d2882dae0"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; UUtilityAIResponseCurve &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a4e1ff874a12cc22174bb4d2882dae0">ResponseCurve</a></td></tr>
+<tr class="memitem:a9a4e1ff874a12cc22174bb4d2882dae0" id="r_a9a4e1ff874a12cc22174bb4d2882dae0"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; <a class="el" href="class_u_utility_a_i_response_curve.html">UUtilityAIResponseCurve</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a4e1ff874a12cc22174bb4d2882dae0">ResponseCurve</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Evaluates a context value to produce a utility score.</p>
 <p>Uses a data source to retrieve input and an optional response curve to convert that input into a score. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a2a65220e22bfd5a2cc4f2ce46f792fbc" name="a2a65220e22bfd5a2cc4f2ce46f792fbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a65220e22bfd5a2cc4f2ce46f792fbc">&#9670;&#160;</a></span>UFUNCTION()</h2>
+<a id="a73c9ac2d4141ad921493c45aca996e09" name="a73c9ac2d4141ad921493c45aca996e09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c9ac2d4141ad921493c45aca996e09">&#9670;&#160;</a></span>Evaluate()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">UUtilityAIConsideration::UFUNCTION </td>
+          <td class="memname">float UUtilityAIConsideration::Evaluate </td>
           <td>(</td>
-          <td class="paramtype">BlueprintCallable</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Category</td>          <td class="paramname"><span class="paramname"><em></em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Utility&#160;AI&quot;</span>&#160;) const</td>
+          <td class="paramtype">const <a class="el" href="class_u_utility_a_i_context.html">UUtilityAIContext</a> *</td>          <td class="paramname"><span class="paramname"><em>Context</em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Evaluates the consideration.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -136,70 +140,15 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Response score clamped to the range 0.0 to 1.0 when no curve exists, or the score returned by the response curve. </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_consideration_a2a65220e22bfd5a2cc4f2ce46f792fbc_cgraph.png" border="0" usemap="#aclass_u_utility_a_i_consideration_a2a65220e22bfd5a2cc4f2ce46f792fbc_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_u_utility_a_i_consideration_a2a65220e22bfd5a2cc4f2ce46f792fbc_cgraph" id="aclass_u_utility_a_i_consideration_a2a65220e22bfd5a2cc4f2ce46f792fbc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,164,72"/>
-<area shape="poly" title=" " alt="" coords="54,29,52,19,57,11,68,5,85,3,102,5,112,11,109,16,100,10,84,8,70,10,61,14,58,20,59,28"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_consideration_a2a65220e22bfd5a2cc4f2ce46f792fbc_icgraph.png" border="0" usemap="#aclass_u_utility_a_i_consideration_a2a65220e22bfd5a2cc4f2ce46f792fbc_icgraph" loading="lazy" alt=""/></div>
-<map name="aclass_u_utility_a_i_consideration_a2a65220e22bfd5a2cc4f2ce46f792fbc_icgraph" id="aclass_u_utility_a_i_consideration_a2a65220e22bfd5a2cc4f2ce46f792fbc_icgraph">
-<area shape="rect" title=" " alt="" coords="5,29,164,72"/>
-<area shape="poly" title=" " alt="" coords="109,16,100,10,84,8,70,10,61,14,58,20,59,28,54,29,52,19,57,11,68,5,85,3,102,5,112,11"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a0721168e6f9d09c5fca05486cf9ecd0d" name="a0721168e6f9d09c5fca05486cf9ecd0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0721168e6f9d09c5fca05486cf9ecd0d">&#9670;&#160;</a></span>UPROPERTY()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">UUtilityAIConsideration::UPROPERTY </td>
-          <td>(</td>
-          <td class="paramtype">EditAnywhere</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">BlueprintReadWrite</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Category</td>          <td class="paramname"><span class="paramname"><em></em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Utility&#160;AI&quot;</span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Name used to identify this consideration. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_consideration_a0721168e6f9d09c5fca05486cf9ecd0d_cgraph.png" border="0" usemap="#aclass_u_utility_a_i_consideration_a0721168e6f9d09c5fca05486cf9ecd0d_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_u_utility_a_i_consideration_a0721168e6f9d09c5fca05486cf9ecd0d_cgraph" id="aclass_u_utility_a_i_consideration_a0721168e6f9d09c5fca05486cf9ecd0d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,164,72"/>
-<area shape="poly" title=" " alt="" coords="54,29,52,19,57,11,68,5,85,3,102,5,112,11,109,16,100,10,84,8,70,10,61,14,58,20,59,28"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_consideration_a0721168e6f9d09c5fca05486cf9ecd0d_icgraph.png" border="0" usemap="#aclass_u_utility_a_i_consideration_a0721168e6f9d09c5fca05486cf9ecd0d_icgraph" loading="lazy" alt=""/></div>
-<map name="aclass_u_utility_a_i_consideration_a0721168e6f9d09c5fca05486cf9ecd0d_icgraph" id="aclass_u_utility_a_i_consideration_a0721168e6f9d09c5fca05486cf9ecd0d_icgraph">
-<area shape="rect" title=" " alt="" coords="5,29,164,72"/>
-<area shape="poly" title=" " alt="" coords="109,16,100,10,84,8,70,10,61,14,58,20,59,28,54,29,52,19,57,11,68,5,85,3,102,5,112,11"/>
-</map>
-</div>
+<dl class="section return"><dt>Returns</dt><dd>Response score clamped to the range 0.0 to 1.0 when no curve exists, or the score returned by the response curve.</dd></dl>
+<p>Evaluates the input using the configured response curve.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Context</td><td>Context containing values used by the data source. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The resulting utility score. </dd></dl>
 
 </div>
 </div>
@@ -219,6 +168,21 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a8e498158a3a8966d758bb3ae1db8a00a" name="a8e498158a3a8966d758bb3ae1db8a00a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e498158a3a8966d758bb3ae1db8a00a">&#9670;&#160;</a></span>Name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FName UUtilityAIConsideration::Name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Name used to identify this consideration. </p>
+
+</div>
+</div>
 <a id="a9a4e1ff874a12cc22174bb4d2882dae0" name="a9a4e1ff874a12cc22174bb4d2882dae0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9a4e1ff874a12cc22174bb4d2882dae0">&#9670;&#160;</a></span>ResponseCurve</h2>
 
@@ -226,7 +190,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TObjectPtr&lt;UUtilityAIResponseCurve&gt; UUtilityAIConsideration::ResponseCurve</td>
+          <td class="memname">TObjectPtr&lt;<a class="el" href="class_u_utility_a_i_response_curve.html">UUtilityAIResponseCurve</a>&gt; UUtilityAIConsideration::ResponseCurve</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -234,8 +198,9 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Public/<a class="el" href="_utility_a_i_consideration_8h_source.html">UtilityAIConsideration.h</a></li>
+<li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Private/<a class="el" href="_utility_a_i_consideration_8cpp.html">UtilityAIConsideration.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
