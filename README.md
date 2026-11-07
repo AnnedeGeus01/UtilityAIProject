@@ -32,7 +32,7 @@ The framework is built around several main classes:
 
 The following diagram shows the process through which the framework evaluates actions and selects the best action.
 
-![Utility AI Action Selection Pipeline](https://github.com/AnnedeGeus01/UtilityAIProject/blob/main/Plugins/UtilityAI/Documentation/Diagrams/Utility%20AI%20Action%20Selection%20Pipeline-2026-10-29-134602.png?raw=true)
+![Utility AI Action Selection Pipeline](https://github.com/AnnedeGeus01/UtilityAIProject/blob/main/Plugins/UtilityAI/Documentation/Diagrams/UtilityAI%20Action%20Selection%20Pipeline-2026-10-29-134602.pngraw=true)
 
 ## Class Diagram
 
