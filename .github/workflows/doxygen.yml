@@ -1,4 +1,3 @@
-
 name: Publish Doxygen Documentation
 
 on:
@@ -6,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - "Documentation/html/**"
+      - "Plugins/UtilityAI/Source/**"
+      - "Plugins/UtilityAI/Documentation/**"
       - ".github/workflows/doxygen.yml"
   workflow_dispatch:
 
@@ -21,14 +21,22 @@ concurrency:
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install Doxygen
+        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+
+      - name: Generate Doxygen documentation
+        working-directory: Plugins/UtilityAI/Documentation
+        run: doxygen Doxyfile
 
       - name: Upload Doxygen HTML
         uses: actions/upload-pages-artifact@v3
