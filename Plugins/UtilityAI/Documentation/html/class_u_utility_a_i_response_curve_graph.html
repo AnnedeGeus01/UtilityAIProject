@@ -94,26 +94,8 @@ $(function(){initNavTree('class_u_utility_a_i_response_curve_graph.html','','cla
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_utility_a_i_response_curve_graph_8h_source.html">UtilityAIResponseCurveGraph.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for UUtilityAIResponseCurveGraph:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_response_curve_graph__inherit__graph.png" border="0" usemap="#a_u_utility_a_i_response_curve_graph_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
-<map name="a_u_utility_a_i_response_curve_graph_inherit__map" id="a_u_utility_a_i_response_curve_graph_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,213,107"/>
-<area shape="rect" title=" " alt="" coords="59,5,159,32"/>
-<area shape="poly" title=" " alt="" coords="112,48,112,80,106,80,106,48"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for UUtilityAIResponseCurveGraph:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_response_curve_graph__coll__graph.png" border="0" usemap="#a_u_utility_a_i_response_curve_graph_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<map name="a_u_utility_a_i_response_curve_graph_coll__map" id="a_u_utility_a_i_response_curve_graph_coll__map">
-<area shape="rect" title=" " alt="" coords="5,80,213,107"/>
-<area shape="rect" title=" " alt="" coords="59,5,159,32"/>
-<area shape="poly" title=" " alt="" coords="112,48,112,80,106,80,106,48"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+
+<p>Inherits UUserWidget.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -123,6 +105,14 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a34249dbe9f31c5c223867b09c930a651" id="r_a34249dbe9f31c5c223867b09c930a651"><td class="memItemLeft" align="right" valign="top">virtual int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34249dbe9f31c5c223867b09c930a651">NativePaint</a> (const FPaintArgs &amp;Args, const FGeometry &amp;AllottedGeometry, const FSlateRect &amp;MyCullingRect, FSlateWindowElementList &amp;OutDrawElements, int32 LayerId, const FWidgetStyle &amp;InWidgetStyle, bool bParentEnabled) const override</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1ce53b28766a34458a8829474826492f" id="r_a1ce53b28766a34458a8829474826492f"><td class="memItemLeft" align="right" valign="top">TObjectPtr&lt; <a class="el" href="class_u_utility_a_i_response_curve.html">UUtilityAIResponseCurve</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ce53b28766a34458a8829474826492f">ResponseCurve</a></td></tr>
+<tr class="memitem:a3702128011edc4eca67f3cb43e1f19e2" id="r_a3702128011edc4eca67f3cb43e1f19e2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3702128011edc4eca67f3cb43e1f19e2">InputValue</a> = 0.0f</td></tr>
+<tr class="memitem:a4fbe3a3695d3ff0c71a0f629d4ba2e8d" id="r_a4fbe3a3695d3ff0c71a0f629d4ba2e8d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fbe3a3695d3ff0c71a0f629d4ba2e8d">Score</a> = 0.0f</td></tr>
+<tr class="memitem:a929e6b713495ee396d50f80ccee7abe8" id="r_a929e6b713495ee396d50f80ccee7abe8"><td class="memItemLeft" align="right" valign="top">FName&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a929e6b713495ee396d50f80ccee7abe8">ConsiderationName</a> = NAME_None</td></tr>
+<tr class="memitem:af98110a06b811c52573e18c9ade57c32" id="r_af98110a06b811c52573e18c9ade57c32"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af98110a06b811c52573e18c9ade57c32">bHasGraphData</a> = false</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Draws a response curve and marks the current input and score. Used for the Utility AI debug widget. </p>
@@ -269,9 +259,125 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="af98110a06b811c52573e18c9ade57c32" name="af98110a06b811c52573e18c9ade57c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af98110a06b811c52573e18c9ade57c32">&#9670;&#160;</a></span>bHasGraphData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UUtilityAIResponseCurveGraph::bHasGraphData = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Whether the graph has data to display. </p>
+
+</div>
+</div>
+<a id="a929e6b713495ee396d50f80ccee7abe8" name="a929e6b713495ee396d50f80ccee7abe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a929e6b713495ee396d50f80ccee7abe8">&#9670;&#160;</a></span>ConsiderationName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FName UUtilityAIResponseCurveGraph::ConsiderationName = NAME_None</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Name of the displayed consideration. </p>
+
+</div>
+</div>
+<a id="a3702128011edc4eca67f3cb43e1f19e2" name="a3702128011edc4eca67f3cb43e1f19e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3702128011edc4eca67f3cb43e1f19e2">&#9670;&#160;</a></span>InputValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UUtilityAIResponseCurveGraph::InputValue = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Current input passed to the response curve. </p>
+
+</div>
+</div>
+<a id="a1ce53b28766a34458a8829474826492f" name="a1ce53b28766a34458a8829474826492f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ce53b28766a34458a8829474826492f">&#9670;&#160;</a></span>ResponseCurve</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TObjectPtr&lt;<a class="el" href="class_u_utility_a_i_response_curve.html">UUtilityAIResponseCurve</a>&gt; UUtilityAIResponseCurveGraph::ResponseCurve</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Response curve currently displayed. </p>
+
+</div>
+</div>
+<a id="a4fbe3a3695d3ff0c71a0f629d4ba2e8d" name="a4fbe3a3695d3ff0c71a0f629d4ba2e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fbe3a3695d3ff0c71a0f629d4ba2e8d">&#9670;&#160;</a></span>Score</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UUtilityAIResponseCurveGraph::Score = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Current score returned by the response curve. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Public/<a class="el" href="_utility_a_i_response_curve_graph_8h_source.html">UtilityAIResponseCurveGraph.h</a></li>
-<li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Private/<b>UtilityAIResponseCurveGraph.cpp</b></li>
+<li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Private/<a class="el" href="_utility_a_i_response_curve_graph_8cpp.html">UtilityAIResponseCurveGraph.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

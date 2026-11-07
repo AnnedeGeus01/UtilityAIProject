@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['nativeoninitialized_0',['NativeOnInitialized',['../class_u_utility_a_i_consideration_row.html#aa7338d2a8f4deaf359743d2c6b982e63',1,'UUtilityAIConsiderationRow']]],
-  ['nativepaint_1',['NativePaint',['../class_u_utility_a_i_response_curve_graph.html#a34249dbe9f31c5c223867b09c930a651',1,'UUtilityAIResponseCurveGraph']]],
-  ['nativetick_2',['NativeTick',['../class_u_utility_a_i_debug_widget.html#a42f3df3361f15a18554792ea27a52d27',1,'UUtilityAIDebugWidget']]]
+  ['getvalue_0',['GetValue',['../class_u_utility_a_i_data_source.html#ac803f4c50b8785c22e412b93bef64091',1,'UUtilityAIDataSource']]],
+  ['getvalue_5fimplementation_1',['GetValue_Implementation',['../class_u_utility_a_i_context_data_source.html#a41ec9c616eec02076b409c1d5ac30fd9',1,'UUtilityAIContextDataSource::GetValue_Implementation()'],['../class_u_utility_a_i_data_source.html#adaf5f1cb5864fbccd6093126b548256a',1,'UUtilityAIDataSource::GetValue_Implementation()']]]
 ];

@@ -1,11 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,81,106,108"/>
-<area shape="rect" id="Node000001" href="$class_u_utility_a_i_action_row.html" title=" " alt="" coords="186,5,328,32"/>
-<area shape="poly" id="edge10_Node000000_Node000001" title=" " alt="" coords="92,71,153,42,189,30,191,35,155,46,94,76"/>
-<area shape="rect" id="Node000002" href="$class_u_utility_a_i_consideration_row.html" title=" " alt="" coords="165,56,350,83"/>
-<area shape="poly" id="edge11_Node000000_Node000002" title=" " alt="" coords="121,84,164,78,165,84,121,89"/>
-<area shape="rect" id="Node000003" href="$class_u_utility_a_i_debug_widget.html" title=" " alt="" coords="179,107,336,133"/>
-<area shape="poly" id="edge12_Node000000_Node000003" title=" " alt="" coords="121,100,179,107,178,113,121,105"/>
-<area shape="rect" id="Node000004" href="$class_u_utility_a_i_response_curve_graph.html" title=" " alt="" coords="154,157,361,184"/>
-<area shape="poly" id="edge13_Node000000_Node000004" title=" " alt="" coords="94,114,155,143,191,154,189,159,153,148,92,119"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,107,75,133"/>
+<area shape="rect" id="Node000001" href="$class_u_utility_a_i_action.html" title=" " alt="" coords="155,5,270,32"/>
+<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="60,93,88,66,121,42,153,28,155,33,124,46,91,70,64,97"/>
+<area shape="rect" id="Node000002" href="$class_u_utility_a_i_consideration.html" title=" " alt="" coords="133,56,292,83"/>
+<area shape="poly" id="edge5_Node000000_Node000002" title=" " alt="" coords="89,102,122,92,161,81,163,86,123,97,90,107"/>
+<area shape="rect" id="Node000003" href="$class_u_utility_a_i_context.html" title=" " alt="" coords="150,107,274,133"/>
+<area shape="poly" id="edge6_Node000000_Node000003" title=" " alt="" coords="90,117,150,117,150,123,90,123"/>
+<area shape="rect" id="Node000004" href="$class_u_utility_a_i_data_source.html" title=" " alt="" coords="139,157,286,184"/>
+<area shape="poly" id="edge7_Node000000_Node000004" title=" " alt="" coords="90,133,123,143,163,154,161,159,122,148,89,138"/>
+<area shape="rect" id="Node000006" href="$class_u_utility_a_i_decision_manager.html" title=" " alt="" coords="123,208,302,235"/>
+<area shape="poly" id="edge9_Node000000_Node000006" title=" " alt="" coords="64,143,91,170,124,194,149,205,147,210,121,198,88,174,60,147"/>
+<area shape="rect" id="Node000005" href="$class_u_utility_a_i_context_data_source.html" title=" " alt="" coords="350,157,543,184"/>
+<area shape="poly" id="edge8_Node000004_Node000005" title=" " alt="" coords="301,168,350,168,350,173,301,173"/>
 </map>

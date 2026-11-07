@@ -92,46 +92,45 @@ $(function(){initNavTree('_utility_a_i_response_curve_graph_8h_source.html','','
   <div class="headertitle"><div class="title">UtilityAIResponseCurveGraph.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_utility_a_i_response_curve_graph_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;CoreMinimal.h&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Blueprint/UserWidget.h&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;UtilityAIResponseCurveGraph.generated.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span><a class="code hl_class" href="class_u_utility_a_i_response_curve.html">UUtilityAIResponseCurve</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span>UUtilityAIResponseCurve;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>UCLASS()</div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_response_curve_graph.html">   14</a></span>class UTILITYAI_API <a class="code hl_class" href="class_u_utility_a_i_response_curve_graph.html">UUtilityAIResponseCurveGraph</a> : public UUserWidget</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>class UTILITYAI_API UUtilityAIResponseCurveGraph : public UUserWidget</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    GENERATED_BODY()</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>public:</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI|Debug&quot;</span>)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_utility_a_i_response_curve_graph.html#a3ae29d76ced89f854183f85e1bc530a5">SetGraphData</a>(</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_class" href="class_u_utility_a_i_response_curve.html">UUtilityAIResponseCurve</a>* InCurve,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> SetGraphData(</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        UUtilityAIResponseCurve* InCurve,</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">float</span> InInputValue,</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">float</span> InScore,</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        FName InConsiderationName</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    );</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI|Debug&quot;</span>)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_utility_a_i_response_curve_graph.html#a78896e3932b595579b6932e61d5757a2">ClearGraph</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> ClearGraph();</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>protected:</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">virtual</span> int32 <a class="code hl_function" href="class_u_utility_a_i_response_curve_graph.html#a34249dbe9f31c5c223867b09c930a651">NativePaint</a>(</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">const</span> FPaintArgs&amp; Args,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keyword">const</span> FGeometry&amp; AllottedGeometry,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">const</span> FSlateRect&amp; MyCullingRect,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    virtual int32 NativePaint(</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        const FPaintArgs&amp; Args,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        const FGeometry&amp; AllottedGeometry,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        const FSlateRect&amp; MyCullingRect,</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        FSlateWindowElementList&amp; OutDrawElements,</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        int32 LayerId,</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">const</span> FWidgetStyle&amp; InWidgetStyle,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        const FWidgetStyle&amp; InWidgetStyle,</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordtype">bool</span> bParentEnabled</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    ) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    ) const override;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>private:</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    UPROPERTY()</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    TObjectPtr&lt;UUtilityAIResponseCurve&gt; ResponseCurve;</div>
@@ -142,21 +141,15 @@ $(function(){initNavTree('_utility_a_i_response_curve_graph_8h_source.html','','
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    FName ConsiderationName = NAME_None;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">bool</span> bHasGraphData = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">bool</span> bHasGraphData = false;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
-</div>
-<div class="ttc" id="aclass_u_utility_a_i_response_curve_graph_html"><div class="ttname"><a href="class_u_utility_a_i_response_curve_graph.html">UUtilityAIResponseCurveGraph</a></div><div class="ttdef"><b>Definition</b> UtilityAIResponseCurveGraph.h:15</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_response_curve_graph_html_a34249dbe9f31c5c223867b09c930a651"><div class="ttname"><a href="class_u_utility_a_i_response_curve_graph.html#a34249dbe9f31c5c223867b09c930a651">UUtilityAIResponseCurveGraph::NativePaint</a></div><div class="ttdeci">virtual int32 NativePaint(const FPaintArgs &amp;Args, const FGeometry &amp;AllottedGeometry, const FSlateRect &amp;MyCullingRect, FSlateWindowElementList &amp;OutDrawElements, int32 LayerId, const FWidgetStyle &amp;InWidgetStyle, bool bParentEnabled) const override</div><div class="ttdef"><b>Definition</b> UtilityAIResponseCurveGraph.cpp:58</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_response_curve_graph_html_a3ae29d76ced89f854183f85e1bc530a5"><div class="ttname"><a href="class_u_utility_a_i_response_curve_graph.html#a3ae29d76ced89f854183f85e1bc530a5">UUtilityAIResponseCurveGraph::SetGraphData</a></div><div class="ttdeci">void SetGraphData(UUtilityAIResponseCurve *InCurve, float InInputValue, float InScore, FName InConsiderationName)</div><div class="ttdef"><b>Definition</b> UtilityAIResponseCurveGraph.cpp:16</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_response_curve_graph_html_a78896e3932b595579b6932e61d5757a2"><div class="ttname"><a href="class_u_utility_a_i_response_curve_graph.html#a78896e3932b595579b6932e61d5757a2">UUtilityAIResponseCurveGraph::ClearGraph</a></div><div class="ttdeci">void ClearGraph()</div><div class="ttdef"><b>Definition</b> UtilityAIResponseCurveGraph.cpp:35</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_response_curve_html"><div class="ttname"><a href="class_u_utility_a_i_response_curve.html">UUtilityAIResponseCurve</a></div><div class="ttdef"><b>Definition</b> UtilityAIResponseCurve.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>UtilityAIProject</b></li><li class="navelem"><b>Plugins</b></li><li class="navelem"><b>UtilityAI</b></li><li class="navelem"><b>Source</b></li><li class="navelem"><b>UtilityAI</b></li><li class="navelem"><b>Public</b></li><li class="navelem"><b>UtilityAIResponseCurveGraph.h</b></li>
+    <li class="navelem"><a href="dir_704b499139f2a782aadea36e2ad6a1c1.html">UtilityAIProject</a></li><li class="navelem"><a href="dir_145077d4f85343f2a5a23d0df678674c.html">Plugins</a></li><li class="navelem"><a href="dir_14b63aab9508441a88ce3521d2e8c2b0.html">UtilityAI</a></li><li class="navelem"><a href="dir_d23a8f7eb158b37ee6415f4a1c8d1b7a.html">Source</a></li><li class="navelem"><a href="dir_a6800181311e40cc9016f29e8966f3c3.html">UtilityAI</a></li><li class="navelem"><a href="dir_052945e2c68bd707406162747ea7a76a.html">Public</a></li><li class="navelem"><a href="_utility_a_i_response_curve_graph_8h.html">UtilityAIResponseCurveGraph.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

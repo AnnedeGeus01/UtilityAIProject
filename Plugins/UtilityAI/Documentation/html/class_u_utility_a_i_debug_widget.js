@@ -1,7 +1,11 @@
 var class_u_utility_a_i_debug_widget =
 [
+    [ "ClearConsiderationSelection", "class_u_utility_a_i_debug_widget.html#aa303c3c4341c57bfaa824e7462188380", null ],
+    [ "HandleConsiderationSelectionChanged", "class_u_utility_a_i_debug_widget.html#abf0d171521f80f8969d6bce8463ed103", null ],
     [ "NativeTick", "class_u_utility_a_i_debug_widget.html#a42f3df3361f15a18554792ea27a52d27", null ],
+    [ "RefreshDebugWidget", "class_u_utility_a_i_debug_widget.html#ae92b5995c4087e162689d39ee18351e7", null ],
     [ "SetUtilityAIComponent", "class_u_utility_a_i_debug_widget.html#a73933f0f955ead9d3f9d87ace042abfd", null ],
+    [ "UpdateResponseCurveGraph", "class_u_utility_a_i_debug_widget.html#a31bfa0cde046ac22e3bb65ce6a56b5b5", null ],
     [ "ActionList", "class_u_utility_a_i_debug_widget.html#aa9b04069ff5764a2555937d5d0d4c482", null ],
     [ "ActionRowClass", "class_u_utility_a_i_debug_widget.html#ab44b2a490cc998d834ffa34bd769061c", null ],
     [ "ActionRows", "class_u_utility_a_i_debug_widget.html#a1d2566e450a47585386c441c1b082e8a", null ],
@@ -10,7 +14,14 @@ var class_u_utility_a_i_debug_widget =
     [ "ConsiderationRowClass", "class_u_utility_a_i_debug_widget.html#a8f298f7bd570344979a157170582b131", null ],
     [ "ConsiderationRows", "class_u_utility_a_i_debug_widget.html#a0ff47dba8f5732fada4107ba687607b3", null ],
     [ "CurrentActionText", "class_u_utility_a_i_debug_widget.html#a116df8febe08a2646e321cd69cf1d8cd", null ],
+    [ "RefreshTimer", "class_u_utility_a_i_debug_widget.html#af271534d4c30ab4a14cca79000702721", null ],
     [ "ResponseCurveGraph", "class_u_utility_a_i_debug_widget.html#a33db0f994824ce1361dc1ca9e825f6cc", null ],
     [ "SelectedActionText", "class_u_utility_a_i_debug_widget.html#a69b7f2485aab4c71ed428dd717f57253", null ],
+    [ "SelectedConsiderationActionName", "class_u_utility_a_i_debug_widget.html#ad0bd23a7db69663f95f3769fcd036d35", null ],
+    [ "SelectedConsiderationInput", "class_u_utility_a_i_debug_widget.html#abb360a58c051cd76ec0477a21aeb2725", null ],
+    [ "SelectedConsiderationName", "class_u_utility_a_i_debug_widget.html#a83d9eaad8f2f8d8f060ac5cdc8f4c5ff", null ],
+    [ "SelectedConsiderationRow", "class_u_utility_a_i_debug_widget.html#a51d513dc70934e91a62ed22a605dd447", null ],
+    [ "SelectedConsiderationScore", "class_u_utility_a_i_debug_widget.html#a8b05a1e272b3ea9627938bed70dd9444", null ],
+    [ "SelectedResponseCurve", "class_u_utility_a_i_debug_widget.html#ae7ade11bfa1ff8591471fdf024416da6", null ],
     [ "UtilityAIComponent", "class_u_utility_a_i_debug_widget.html#ab660bfd57644e66fc96363bbada34e7f", null ]
 ];

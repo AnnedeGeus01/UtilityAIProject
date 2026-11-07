@@ -44,9 +44,8 @@ struct FUtilityAIValueBinding
  * Attach this component to an actor and configure its context,
  * decision manager, value bindings and optional debug widget.
  */
-UCLASS(ClassGroup = (UtilityAI), Blueprintable,
-    meta = (BlueprintSpawnableComponent))
-    class UTILITYAI_API UUtilityAIComponent : public UActorComponent
+UCLASS(ClassGroup = (UtilityAI), Blueprintable, meta = (BlueprintSpawnableComponent))
+class UTILITYAI_API UUtilityAIComponent : public UActorComponent
 {
     GENERATED_BODY()
 

@@ -92,18 +92,18 @@ $(function(){initNavTree('_utility_a_i_component_8h_source.html','',''); });
   <div class="headertitle"><div class="title">UtilityAIComponent.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_utility_a_i_component_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;CoreMinimal.h&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Components/ActorComponent.h&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;TimerManager.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;UtilityAIDebugTypes.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_utility_a_i_debug_types_8h.html">UtilityAIDebugTypes.h</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;UtilityAIComponent.generated.h&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="class_u_utility_a_i_context.html">UUtilityAIContext</a>;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="class_u_utility_a_i_decision_manager.html">UUtilityAIDecisionManager</a>;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span><a class="code hl_class" href="class_u_utility_a_i_action.html">UUtilityAIAction</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span><a class="code hl_class" href="class_u_utility_a_i_debug_widget.html">UUtilityAIDebugWidget</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span>UUtilityAIDebugWidget;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>USTRUCT(BlueprintType)</div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
@@ -112,94 +112,103 @@ $(function(){initNavTree('_utility_a_i_component_8h_source.html','',''); });
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    GENERATED_BODY()</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_f_utility_a_i_value_binding.html#a425a66eeb75009857f6eb68a431e667b">   24</a></span>    FName <a class="code hl_variable" href="struct_f_utility_a_i_value_binding.html#a425a66eeb75009857f6eb68a431e667b">PropertyName</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_f_utility_a_i_value_binding.html#a98b82f863c641475f474569ebb111e02">   23</a></span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a98b82f863c641475f474569ebb111e02">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    FName PropertyName;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_f_utility_a_i_value_binding.html#aafc3705534556992f014b3d4ee6d9ab5">   28</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_f_utility_a_i_value_binding.html#aafc3705534556992f014b3d4ee6d9ab5">bNormalizeValue</a> = true;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_f_utility_a_i_value_binding.html#a69035efe6655dbf15bcafe1f86dd8511">   27</a></span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a98b82f863c641475f474569ebb111e02">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">bool</span> bNormalizeValue = true;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">   31</a></span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a98b82f863c641475f474569ebb111e02">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>,</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        meta = (EditCondition = <span class="stringliteral">&quot;bNormalizeValue&quot;</span>))</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">float</span> InputMin = 0.0f;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_f_utility_a_i_value_binding.html#ac425d33f3cc9071c6b053bc2c3fcd522">   33</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="struct_f_utility_a_i_value_binding.html#ac425d33f3cc9071c6b053bc2c3fcd522">InputMin</a> = 0.0f;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_f_utility_a_i_value_binding.html#aba7bee0f03299356da5f148cf638e781">   36</a></span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a98b82f863c641475f474569ebb111e02">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>,</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        meta = (EditCondition = <span class="stringliteral">&quot;bNormalizeValue&quot;</span>))</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">float</span> InputMax = 100.0f;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_f_utility_a_i_value_binding.html#ac3f72848df6cbaa220513933bdf59b88">   38</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="struct_f_utility_a_i_value_binding.html#ac3f72848df6cbaa220513933bdf59b88">InputMax</a> = 100.0f;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>UCLASS(ClassGroup = (<a class="code hl_class" href="class_utility_a_i.html">UtilityAI</a>), Blueprintable,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    meta = (BlueprintSpawnableComponent))</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    class UTILITYAI_API UUtilityAIComponent : public UActorComponent</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    GENERATED_BODY()</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    UUtilityAIComponent();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> BeginPlay() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>(EditAnywhere, Instanced, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    TObjectPtr&lt;UUtilityAIContext&gt; Context;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>(EditAnywhere, Instanced, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    TObjectPtr&lt;UUtilityAIDecisionManager&gt; DecisionManager;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">float</span> DecisionInterval = 0.2f;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    UFUNCTION(BlueprintPure, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">float</span> GetDecisionInterval() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>)</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    TArray&lt;FUtilityAIValueBinding&gt; ValueBindings;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> UpdateContextFromBindings();</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">void</span> MakeDecision();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    UFUNCTION(BlueprintPure, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_class" href="class_u_utility_a_i_action.html">UUtilityAIAction</a>* GetCurrentAction() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Debug&quot;</span>)</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    TSubclassOf&lt;UUtilityAIDebugWidget&gt; DebugWidgetClass;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>(BlueprintReadOnly, Category = <span class="stringliteral">&quot;Utility AI|Debug&quot;</span>)</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    TArray&lt;FUtilityAIActionDebugData&gt; DebugData;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>()</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    TObjectPtr&lt;UUtilityAIDebugWidget&gt; DebugWidget;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    FTimerHandle DecisionTimerHandle;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <a class="code hl_function" href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">UPROPERTY</a>()</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    TObjectPtr&lt;UUtilityAIAction&gt; CurrentAction;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>UCLASS(ClassGroup = (<a class="code hl_class" href="class_utility_a_i.html">UtilityAI</a>), Blueprintable, meta = (BlueprintSpawnableComponent))</div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html">   48</a></span>class UTILITYAI_API <a class="code hl_function" href="class_u_utility_a_i_component.html#a200c6b168f20e9f6c51dc4549339fabb">UUtilityAIComponent</a> : public UActorComponent</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    GENERATED_BODY()</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#a200c6b168f20e9f6c51dc4549339fabb">UUtilityAIComponent</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_utility_a_i_component.html#a5695f00d373aa53f89c36d625847c888">BeginPlay</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#af3a6c2159513e03b8ff6e4f092e3d320">UPROPERTY</a>(EditAnywhere, Instanced, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#a7293e6a69a4a6725655d432752493f62">   66</a></span>    TObjectPtr&lt;<a class="code hl_class" href="class_u_utility_a_i_context.html">UUtilityAIContext</a>&gt; <a class="code hl_variable" href="class_u_utility_a_i_component.html#a7293e6a69a4a6725655d432752493f62">Context</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#af3a6c2159513e03b8ff6e4f092e3d320">UPROPERTY</a>(EditAnywhere, Instanced, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#aeb658bb7d6ca1081b3f4a40ad373bf5a">   70</a></span>    TObjectPtr&lt;<a class="code hl_class" href="class_u_utility_a_i_decision_manager.html">UUtilityAIDecisionManager</a>&gt; <a class="code hl_variable" href="class_u_utility_a_i_component.html#aeb658bb7d6ca1081b3f4a40ad373bf5a">DecisionManager</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#af3a6c2159513e03b8ff6e4f092e3d320">   73</a></span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#af3a6c2159513e03b8ff6e4f092e3d320">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">float</span> DecisionInterval = 0.2f;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#ae8bf984fb2e4f306a14e9f7c049518a4">   81</a></span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#ae8bf984fb2e4f306a14e9f7c049518a4">UFUNCTION</a>(BlueprintPure, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">float</span> GetDecisionInterval() const;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#a3ba3be3d1f0699351ae393f85dbd45ce">   85</a></span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#af3a6c2159513e03b8ff6e4f092e3d320">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    TArray&lt;<a class="code hl_struct" href="struct_f_utility_a_i_value_binding.html">FUtilityAIValueBinding</a>&gt; ValueBindings;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#a64150d5242e540dede8c5c4146adc2b3">   94</a></span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#ae8bf984fb2e4f306a14e9f7c049518a4">UFUNCTION</a>(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI|Context&quot;</span>)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span> UpdateContextFromBindings();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#a62290a1f4fc14e7878e5b2ecb38e58f3">  100</a></span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#ae8bf984fb2e4f306a14e9f7c049518a4">UFUNCTION</a>(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> MakeDecision();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#aaaad2890f81ff965f10d43a53d1868f4">  108</a></span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#ae8bf984fb2e4f306a14e9f7c049518a4">UFUNCTION</a>(BlueprintPure, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_class" href="class_u_utility_a_i_action.html">UUtilityAIAction</a>* GetCurrentAction() const;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#a04e6396f36562f10eac7da10bd9aa066">  112</a></span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#af3a6c2159513e03b8ff6e4f092e3d320">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI|Debug&quot;</span>)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    TSubclassOf&lt;UUtilityAIDebugWidget&gt; DebugWidgetClass;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#a9e1296f6fb542425cc6cfe2c4a85ae20">  116</a></span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#af3a6c2159513e03b8ff6e4f092e3d320">UPROPERTY</a>(BlueprintReadOnly, Category = <span class="stringliteral">&quot;Utility AI|Debug&quot;</span>)</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    TArray&lt;<a class="code hl_struct" href="struct_f_utility_a_i_action_debug_data.html">FUtilityAIActionDebugData</a>&gt; DebugData;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#a8ddeff92cc33aecefbe8ee903ba02597">  120</a></span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#af3a6c2159513e03b8ff6e4f092e3d320">UPROPERTY</a>()</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    TObjectPtr&lt;UUtilityAIDebugWidget&gt; DebugWidget;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>private:</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#ab47f9ad6fbb8fbfe33ffeabab3aa4939">  126</a></span>    FTimerHandle <a class="code hl_variable" href="class_u_utility_a_i_component.html#ab47f9ad6fbb8fbfe33ffeabab3aa4939">DecisionTimerHandle</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_component.html#a30acf15fa7bd3fcafafee61fe16c3004">  129</a></span>    <a class="code hl_function" href="class_u_utility_a_i_component.html#af3a6c2159513e03b8ff6e4f092e3d320">UPROPERTY</a>()</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    TObjectPtr&lt;<a class="code hl_class" href="class_u_utility_a_i_action.html">UUtilityAIAction</a>&gt; CurrentAction;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>};</div>
+</div>
+<div class="ttc" id="a_utility_a_i_debug_types_8h_html"><div class="ttname"><a href="_utility_a_i_debug_types_8h.html">UtilityAIDebugTypes.h</a></div></div>
 <div class="ttc" id="aclass_u_utility_a_i_action_html"><div class="ttname"><a href="class_u_utility_a_i_action.html">UUtilityAIAction</a></div><div class="ttdef"><b>Definition</b> UtilityAIAction.h:32</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_component_html_a200c6b168f20e9f6c51dc4549339fabb"><div class="ttname"><a href="class_u_utility_a_i_component.html#a200c6b168f20e9f6c51dc4549339fabb">UUtilityAIComponent::UUtilityAIComponent</a></div><div class="ttdeci">UUtilityAIComponent()</div><div class="ttdef"><b>Definition</b> UtilityAIComponent.cpp:118</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_component_html_a5695f00d373aa53f89c36d625847c888"><div class="ttname"><a href="class_u_utility_a_i_component.html#a5695f00d373aa53f89c36d625847c888">UUtilityAIComponent::BeginPlay</a></div><div class="ttdeci">virtual void BeginPlay() override</div><div class="ttdef"><b>Definition</b> UtilityAIComponent.cpp:136</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_component_html_a7293e6a69a4a6725655d432752493f62"><div class="ttname"><a href="class_u_utility_a_i_component.html#a7293e6a69a4a6725655d432752493f62">UUtilityAIComponent::Context</a></div><div class="ttdeci">TObjectPtr&lt; UUtilityAIContext &gt; Context</div><div class="ttdef"><b>Definition</b> UtilityAIComponent.h:66</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_component_html_ab47f9ad6fbb8fbfe33ffeabab3aa4939"><div class="ttname"><a href="class_u_utility_a_i_component.html#ab47f9ad6fbb8fbfe33ffeabab3aa4939">UUtilityAIComponent::DecisionTimerHandle</a></div><div class="ttdeci">FTimerHandle DecisionTimerHandle</div><div class="ttdef"><b>Definition</b> UtilityAIComponent.h:126</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_component_html_ae8bf984fb2e4f306a14e9f7c049518a4"><div class="ttname"><a href="class_u_utility_a_i_component.html#ae8bf984fb2e4f306a14e9f7c049518a4">UUtilityAIComponent::UFUNCTION</a></div><div class="ttdeci">UFUNCTION(BlueprintPure, Category=&quot;Utility AI&quot;) float GetDecisionInterval() const</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_component_html_aeb658bb7d6ca1081b3f4a40ad373bf5a"><div class="ttname"><a href="class_u_utility_a_i_component.html#aeb658bb7d6ca1081b3f4a40ad373bf5a">UUtilityAIComponent::DecisionManager</a></div><div class="ttdeci">TObjectPtr&lt; UUtilityAIDecisionManager &gt; DecisionManager</div><div class="ttdef"><b>Definition</b> UtilityAIComponent.h:70</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_component_html_af3a6c2159513e03b8ff6e4f092e3d320"><div class="ttname"><a href="class_u_utility_a_i_component.html#af3a6c2159513e03b8ff6e4f092e3d320">UUtilityAIComponent::UPROPERTY</a></div><div class="ttdeci">UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=&quot;Utility AI&quot;) float DecisionInterval=0.2f</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_context_html"><div class="ttname"><a href="class_u_utility_a_i_context.html">UUtilityAIContext</a></div><div class="ttdef"><b>Definition</b> UtilityAIContext.h:54</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_debug_widget_html"><div class="ttname"><a href="class_u_utility_a_i_debug_widget.html">UUtilityAIDebugWidget</a></div><div class="ttdef"><b>Definition</b> UtilityAIDebugWidget.h:23</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_decision_manager_html"><div class="ttname"><a href="class_u_utility_a_i_decision_manager.html">UUtilityAIDecisionManager</a></div><div class="ttdef"><b>Definition</b> UtilityAIDecisionManager.h:18</div></div>
 <div class="ttc" id="aclass_utility_a_i_html"><div class="ttname"><a href="class_utility_a_i.html">UtilityAI</a></div><div class="ttdef"><b>Definition</b> UtilityAI.Build.cs:6</div></div>
+<div class="ttc" id="astruct_f_utility_a_i_action_debug_data_html"><div class="ttname"><a href="struct_f_utility_a_i_action_debug_data.html">FUtilityAIActionDebugData</a></div><div class="ttdef"><b>Definition</b> UtilityAIDebugTypes.h:39</div></div>
 <div class="ttc" id="astruct_f_utility_a_i_value_binding_html"><div class="ttname"><a href="struct_f_utility_a_i_value_binding.html">FUtilityAIValueBinding</a></div><div class="ttdef"><b>Definition</b> UtilityAIComponent.h:19</div></div>
-<div class="ttc" id="astruct_f_utility_a_i_value_binding_html_a425a66eeb75009857f6eb68a431e667b"><div class="ttname"><a href="struct_f_utility_a_i_value_binding.html#a425a66eeb75009857f6eb68a431e667b">FUtilityAIValueBinding::PropertyName</a></div><div class="ttdeci">FName PropertyName</div><div class="ttdef"><b>Definition</b> UtilityAIComponent.h:24</div></div>
-<div class="ttc" id="astruct_f_utility_a_i_value_binding_html_a91552c6343e5f2389dc1fa598f89a307"><div class="ttname"><a href="struct_f_utility_a_i_value_binding.html#a91552c6343e5f2389dc1fa598f89a307">FUtilityAIValueBinding::UPROPERTY</a></div><div class="ttdeci">UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=&quot;Utility AI|Context&quot;, meta=(EditCondition=&quot;bNormalizeValue&quot;)) float InputMin=0.0f</div></div>
-<div class="ttc" id="astruct_f_utility_a_i_value_binding_html_aafc3705534556992f014b3d4ee6d9ab5"><div class="ttname"><a href="struct_f_utility_a_i_value_binding.html#aafc3705534556992f014b3d4ee6d9ab5">FUtilityAIValueBinding::bNormalizeValue</a></div><div class="ttdeci">bool bNormalizeValue</div><div class="ttdef"><b>Definition</b> UtilityAIComponent.h:28</div></div>
+<div class="ttc" id="astruct_f_utility_a_i_value_binding_html_a98b82f863c641475f474569ebb111e02"><div class="ttname"><a href="struct_f_utility_a_i_value_binding.html#a98b82f863c641475f474569ebb111e02">FUtilityAIValueBinding::UPROPERTY</a></div><div class="ttdeci">UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=&quot;Utility AI|Context&quot;) FName PropertyName</div></div>
+<div class="ttc" id="astruct_f_utility_a_i_value_binding_html_ac3f72848df6cbaa220513933bdf59b88"><div class="ttname"><a href="struct_f_utility_a_i_value_binding.html#ac3f72848df6cbaa220513933bdf59b88">FUtilityAIValueBinding::InputMax</a></div><div class="ttdeci">float InputMax</div><div class="ttdef"><b>Definition</b> UtilityAIComponent.h:38</div></div>
+<div class="ttc" id="astruct_f_utility_a_i_value_binding_html_ac425d33f3cc9071c6b053bc2c3fcd522"><div class="ttname"><a href="struct_f_utility_a_i_value_binding.html#ac425d33f3cc9071c6b053bc2c3fcd522">FUtilityAIValueBinding::InputMin</a></div><div class="ttdeci">float InputMin</div><div class="ttdef"><b>Definition</b> UtilityAIComponent.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>UtilityAIProject</b></li><li class="navelem"><b>Plugins</b></li><li class="navelem"><b>UtilityAI</b></li><li class="navelem"><b>Source</b></li><li class="navelem"><b>UtilityAI</b></li><li class="navelem"><b>Public</b></li><li class="navelem"><b>UtilityAIComponent.h</b></li>
+    <li class="navelem"><a href="dir_704b499139f2a782aadea36e2ad6a1c1.html">UtilityAIProject</a></li><li class="navelem"><a href="dir_145077d4f85343f2a5a23d0df678674c.html">Plugins</a></li><li class="navelem"><a href="dir_14b63aab9508441a88ce3521d2e8c2b0.html">UtilityAI</a></li><li class="navelem"><a href="dir_d23a8f7eb158b37ee6415f4a1c8d1b7a.html">Source</a></li><li class="navelem"><a href="dir_a6800181311e40cc9016f29e8966f3c3.html">UtilityAI</a></li><li class="navelem"><a href="dir_052945e2c68bd707406162747ea7a76a.html">Public</a></li><li class="navelem"><a href="_utility_a_i_component_8h.html">UtilityAIComponent.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

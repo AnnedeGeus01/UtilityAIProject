@@ -92,10 +92,10 @@ $(function(){initNavTree('_utility_a_i_decision_manager_8h_source.html','',''); 
   <div class="headertitle"><div class="title">UtilityAIDecisionManager.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_utility_a_i_decision_manager_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;CoreMinimal.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;UtilityAIDebugTypes.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_utility_a_i_debug_types_8h.html">UtilityAIDebugTypes.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;UObject/Object.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;UtilityAIDecisionManager.generated.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
@@ -110,16 +110,16 @@ $(function(){initNavTree('_utility_a_i_decision_manager_8h_source.html','',''); 
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_decision_manager.html#a25105bc58faa50293198023d4736f03b">   24</a></span>    <a class="code hl_function" href="class_u_utility_a_i_decision_manager.html#a25105bc58faa50293198023d4736f03b">UPROPERTY</a>(</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    UPROPERTY(</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        EditAnywhere,</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        Instanced,</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        BlueprintReadWrite,</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        Category = <span class="stringliteral">&quot;Utility AI&quot;</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    )</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    TArray&lt;TObjectPtr&lt;<a class="code hl_class" href="class_u_utility_a_i_action.html">UUtilityAIAction</a>&gt;&gt; Actions;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_decision_manager.html#a65bffc8ce0c21d49afbf88c83a5a2064">   30</a></span>    TArray&lt;TObjectPtr&lt;<a class="code hl_class" href="class_u_utility_a_i_action.html">UUtilityAIAction</a>&gt;&gt; <a class="code hl_variable" href="class_u_utility_a_i_decision_manager.html#a65bffc8ce0c21d49afbf88c83a5a2064">Actions</a>;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="class_u_utility_a_i_action.html">UUtilityAIAction</a>* <a class="code hl_function" href="class_u_utility_a_i_decision_manager.html#aff66ed6ea60c409b56ea2c3a90954400">ChooseBestAction</a>(</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_decision_manager.html#a06e58d9f9fa021219316284b59e6c6ae">   38</a></span>    <a class="code hl_function" href="class_u_utility_a_i_decision_manager.html#a06e58d9f9fa021219316284b59e6c6ae">UFUNCTION</a>(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="class_u_utility_a_i_action.html">UUtilityAIAction</a>* ChooseBestAction(</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        const <a class="code hl_class" href="class_u_utility_a_i_context.html">UUtilityAIContext</a>* Context</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    ) const;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
@@ -129,12 +129,13 @@ $(function(){initNavTree('_utility_a_i_decision_manager_8h_source.html','',''); 
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    ) const;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
 </div>
+<div class="ttc" id="a_utility_a_i_debug_types_8h_html"><div class="ttname"><a href="_utility_a_i_debug_types_8h.html">UtilityAIDebugTypes.h</a></div></div>
 <div class="ttc" id="aclass_u_utility_a_i_action_html"><div class="ttname"><a href="class_u_utility_a_i_action.html">UUtilityAIAction</a></div><div class="ttdef"><b>Definition</b> UtilityAIAction.h:32</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_context_html"><div class="ttname"><a href="class_u_utility_a_i_context.html">UUtilityAIContext</a></div><div class="ttdef"><b>Definition</b> UtilityAIContext.h:54</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_decision_manager_html"><div class="ttname"><a href="class_u_utility_a_i_decision_manager.html">UUtilityAIDecisionManager</a></div><div class="ttdef"><b>Definition</b> UtilityAIDecisionManager.h:18</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_decision_manager_html_a25105bc58faa50293198023d4736f03b"><div class="ttname"><a href="class_u_utility_a_i_decision_manager.html#a25105bc58faa50293198023d4736f03b">UUtilityAIDecisionManager::UPROPERTY</a></div><div class="ttdeci">UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite, Category=&quot;Utility AI&quot;) TArray&lt; TObjectPtr&lt; UUtilityAIAction &gt; &gt; Actions</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_decision_manager_html_a06e58d9f9fa021219316284b59e6c6ae"><div class="ttname"><a href="class_u_utility_a_i_decision_manager.html#a06e58d9f9fa021219316284b59e6c6ae">UUtilityAIDecisionManager::UFUNCTION</a></div><div class="ttdeci">UFUNCTION(BlueprintCallable, Category=&quot;Utility AI&quot;) UUtilityAIAction *ChooseBestAction(const UUtilityAIContext *Context) const</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_decision_manager_html_a65bffc8ce0c21d49afbf88c83a5a2064"><div class="ttname"><a href="class_u_utility_a_i_decision_manager.html#a65bffc8ce0c21d49afbf88c83a5a2064">UUtilityAIDecisionManager::Actions</a></div><div class="ttdeci">TArray&lt; TObjectPtr&lt; UUtilityAIAction &gt; &gt; Actions</div><div class="ttdef"><b>Definition</b> UtilityAIDecisionManager.h:30</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_decision_manager_html_a97023208f2057b37a719fa6ba4f0a43c"><div class="ttname"><a href="class_u_utility_a_i_decision_manager.html#a97023208f2057b37a719fa6ba4f0a43c">UUtilityAIDecisionManager::ChooseBestActionWithDebug</a></div><div class="ttdeci">UUtilityAIAction * ChooseBestActionWithDebug(const UUtilityAIContext *Context, TArray&lt; FUtilityAIActionDebugData &gt; &amp;OutDebugData) const</div><div class="ttdef"><b>Definition</b> UtilityAIDecisionManager.cpp:31</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_decision_manager_html_aff66ed6ea60c409b56ea2c3a90954400"><div class="ttname"><a href="class_u_utility_a_i_decision_manager.html#aff66ed6ea60c409b56ea2c3a90954400">UUtilityAIDecisionManager::ChooseBestAction</a></div><div class="ttdeci">UUtilityAIAction * ChooseBestAction(const UUtilityAIContext *Context) const</div><div class="ttdef"><b>Definition</b> UtilityAIDecisionManager.cpp:12</div></div>
 <div class="ttc" id="astruct_f_utility_a_i_action_debug_data_html"><div class="ttname"><a href="struct_f_utility_a_i_action_debug_data.html">FUtilityAIActionDebugData</a></div><div class="ttdef"><b>Definition</b> UtilityAIDebugTypes.h:39</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -142,7 +143,7 @@ $(function(){initNavTree('_utility_a_i_decision_manager_8h_source.html','',''); 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>UtilityAIProject</b></li><li class="navelem"><b>Plugins</b></li><li class="navelem"><b>UtilityAI</b></li><li class="navelem"><b>Source</b></li><li class="navelem"><b>UtilityAI</b></li><li class="navelem"><b>Public</b></li><li class="navelem"><b>UtilityAIDecisionManager.h</b></li>
+    <li class="navelem"><a href="dir_704b499139f2a782aadea36e2ad6a1c1.html">UtilityAIProject</a></li><li class="navelem"><a href="dir_145077d4f85343f2a5a23d0df678674c.html">Plugins</a></li><li class="navelem"><a href="dir_14b63aab9508441a88ce3521d2e8c2b0.html">UtilityAI</a></li><li class="navelem"><a href="dir_d23a8f7eb158b37ee6415f4a1c8d1b7a.html">Source</a></li><li class="navelem"><a href="dir_a6800181311e40cc9016f29e8966f3c3.html">UtilityAI</a></li><li class="navelem"><a href="dir_052945e2c68bd707406162747ea7a76a.html">Public</a></li><li class="navelem"><a href="_utility_a_i_decision_manager_8h.html">UtilityAIDecisionManager.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

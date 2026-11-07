@@ -94,90 +94,22 @@ $(function(){initNavTree('class_u_utility_a_i_decision_manager.html','','class_u
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_utility_a_i_decision_manager_8h_source.html">UtilityAIDecisionManager.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for UUtilityAIDecisionManager:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_decision_manager__inherit__graph.png" border="0" usemap="#a_u_utility_a_i_decision_manager_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
-<map name="a_u_utility_a_i_decision_manager_inherit__map" id="a_u_utility_a_i_decision_manager_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,185,107"/>
-<area shape="rect" title=" " alt="" coords="60,5,130,32"/>
-<area shape="poly" title=" " alt="" coords="98,48,98,80,92,80,92,48"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for UUtilityAIDecisionManager:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_decision_manager__coll__graph.png" border="0" usemap="#a_u_utility_a_i_decision_manager_coll__map" loading="lazy" alt="Collaboration graph"/></div>
-<map name="a_u_utility_a_i_decision_manager_coll__map" id="a_u_utility_a_i_decision_manager_coll__map">
-<area shape="rect" title=" " alt="" coords="5,80,185,107"/>
-<area shape="rect" title=" " alt="" coords="60,5,130,32"/>
-<area shape="poly" title=" " alt="" coords="98,48,98,80,92,80,92,48"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+
+<p>Inherits UObject.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a25105bc58faa50293198023d4736f03b" id="r_a25105bc58faa50293198023d4736f03b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25105bc58faa50293198023d4736f03b">UPROPERTY</a> (EditAnywhere, Instanced, BlueprintReadWrite, Category=&quot;Utility AI&quot;) TArray&lt; TObjectPtr&lt; <a class="el" href="class_u_utility_a_i_action.html">UUtilityAIAction</a> &gt; &gt; Actions</td></tr>
-<tr class="memitem:aff66ed6ea60c409b56ea2c3a90954400" id="r_aff66ed6ea60c409b56ea2c3a90954400"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_utility_a_i_action.html">UUtilityAIAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff66ed6ea60c409b56ea2c3a90954400">ChooseBestAction</a> (const <a class="el" href="class_u_utility_a_i_context.html">UUtilityAIContext</a> *Context) const</td></tr>
+<tr class="memitem:a06e58d9f9fa021219316284b59e6c6ae" id="r_a06e58d9f9fa021219316284b59e6c6ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06e58d9f9fa021219316284b59e6c6ae">UFUNCTION</a> (BlueprintCallable, Category=&quot;Utility AI&quot;) <a class="el" href="class_u_utility_a_i_action.html">UUtilityAIAction</a> *ChooseBestAction(const <a class="el" href="class_u_utility_a_i_context.html">UUtilityAIContext</a> *Context) const</td></tr>
 <tr class="memitem:a97023208f2057b37a719fa6ba4f0a43c" id="r_a97023208f2057b37a719fa6ba4f0a43c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_utility_a_i_action.html">UUtilityAIAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97023208f2057b37a719fa6ba4f0a43c">ChooseBestActionWithDebug</a> (const <a class="el" href="class_u_utility_a_i_context.html">UUtilityAIContext</a> *Context, TArray&lt; <a class="el" href="struct_f_utility_a_i_action_debug_data.html">FUtilityAIActionDebugData</a> &gt; &amp;OutDebugData) const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a65bffc8ce0c21d49afbf88c83a5a2064" id="r_a65bffc8ce0c21d49afbf88c83a5a2064"><td class="memItemLeft" align="right" valign="top">TArray&lt; TObjectPtr&lt; <a class="el" href="class_u_utility_a_i_action.html">UUtilityAIAction</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65bffc8ce0c21d49afbf88c83a5a2064">Actions</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Selects the action with the highest utility score.</p>
 <p>Evaluates configured actions and optionally records debug data. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aff66ed6ea60c409b56ea2c3a90954400" name="aff66ed6ea60c409b56ea2c3a90954400"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff66ed6ea60c409b56ea2c3a90954400">&#9670;&#160;</a></span>ChooseBestAction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_u_utility_a_i_action.html">UUtilityAIAction</a> * UUtilityAIDecisionManager::ChooseBestAction </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_u_utility_a_i_context.html">UUtilityAIContext</a> *</td>          <td class="paramname"><span class="paramname"><em>Context</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Selects the action with the highest utility.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Context</td><td>Context containing values used by actions. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The selected action, or nullptr if none are valid.</dd></dl>
-<p>Selects the action with the highest utility score.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Context</td><td>Context containing values used by actions. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The selected action, or nullptr if no valid action exists. </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_decision_manager_aff66ed6ea60c409b56ea2c3a90954400_cgraph.png" border="0" usemap="#aclass_u_utility_a_i_decision_manager_aff66ed6ea60c409b56ea2c3a90954400_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_u_utility_a_i_decision_manager_aff66ed6ea60c409b56ea2c3a90954400_cgraph" id="aclass_u_utility_a_i_decision_manager_aff66ed6ea60c409b56ea2c3a90954400_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,185,48"/>
-<area shape="rect" href="class_u_utility_a_i_decision_manager.html#a97023208f2057b37a719fa6ba4f0a43c" title=" " alt="" coords="233,5,436,48"/>
-<area shape="poly" title=" " alt="" coords="185,24,217,24,217,29,185,29"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_decision_manager_aff66ed6ea60c409b56ea2c3a90954400_icgraph.png" border="0" usemap="#aclass_u_utility_a_i_decision_manager_aff66ed6ea60c409b56ea2c3a90954400_icgraph" loading="lazy" alt=""/></div>
-<map name="aclass_u_utility_a_i_decision_manager_aff66ed6ea60c409b56ea2c3a90954400_icgraph" id="aclass_u_utility_a_i_decision_manager_aff66ed6ea60c409b56ea2c3a90954400_icgraph">
-<area shape="rect" title=" " alt="" coords="233,5,412,48"/>
-<area shape="rect" href="class_u_utility_a_i_decision_manager.html#a25105bc58faa50293198023d4736f03b" title=" " alt="" coords="5,5,185,48"/>
-<area shape="poly" title=" " alt="" coords="217,29,185,29,185,24,217,24"/>
-</map>
-</div>
-
-</div>
-</div>
 <a id="a97023208f2057b37a719fa6ba4f0a43c" name="a97023208f2057b37a719fa6ba4f0a43c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97023208f2057b37a719fa6ba4f0a43c">&#9670;&#160;</a></span>ChooseBestActionWithDebug()</h2>
 
@@ -221,65 +153,83 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_u_utility_a_i_decision_manager_a97023208f2057b37a719fa6ba4f0a43c_icgraph.png" border="0" usemap="#aclass_u_utility_a_i_decision_manager_a97023208f2057b37a719fa6ba4f0a43c_icgraph" loading="lazy" alt=""/></div>
 <map name="aclass_u_utility_a_i_decision_manager_a97023208f2057b37a719fa6ba4f0a43c_icgraph" id="aclass_u_utility_a_i_decision_manager_a97023208f2057b37a719fa6ba4f0a43c_icgraph">
-<area shape="rect" title=" " alt="" coords="460,35,663,77"/>
-<area shape="rect" href="class_u_utility_a_i_decision_manager.html#aff66ed6ea60c409b56ea2c3a90954400" title=" " alt="" coords="233,5,412,48"/>
-<area shape="poly" title=" " alt="" coords="444,44,412,40,413,35,445,39"/>
-<area shape="rect" href="class_u_utility_a_i_decision_manager.html#a25105bc58faa50293198023d4736f03b" title=" " alt="" coords="5,35,185,77"/>
-<area shape="poly" title=" " alt="" coords="444,62,412,63,233,63,185,62,185,56,233,57,412,57,444,57"/>
-<area shape="poly" title=" " alt="" coords="218,43,186,47,185,42,217,38"/>
+<area shape="rect" title=" " alt="" coords="233,29,436,72"/>
+<area shape="rect" href="class_u_utility_a_i_decision_manager.html#a06e58d9f9fa021219316284b59e6c6ae" title=" " alt="" coords="5,29,185,72"/>
+<area shape="poly" title=" " alt="" coords="217,53,185,53,185,48,217,48"/>
+<area shape="poly" title=" " alt="" coords="134,16,119,10,95,8,72,10,58,15,53,21,55,28,50,29,48,19,55,10,71,5,95,3,121,5,136,11"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a25105bc58faa50293198023d4736f03b" name="a25105bc58faa50293198023d4736f03b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25105bc58faa50293198023d4736f03b">&#9670;&#160;</a></span>UPROPERTY()</h2>
+<a id="a06e58d9f9fa021219316284b59e6c6ae" name="a06e58d9f9fa021219316284b59e6c6ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e58d9f9fa021219316284b59e6c6ae">&#9670;&#160;</a></span>UFUNCTION()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">UUtilityAIDecisionManager::UPROPERTY </td>
+          <td class="memname">UUtilityAIDecisionManager::UFUNCTION </td>
           <td>(</td>
-          <td class="paramtype">EditAnywhere</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+          <td class="paramtype">BlueprintCallable</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Instanced</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">BlueprintReadWrite</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Category</td>          <td class="paramname"><span class="paramname"><em></em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Utility&#160;AI&quot;</span>&#160;)</td>
+          <td class="paramtype">Category</td>          <td class="paramname"><span class="paramname"><em></em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Utility&#160;AI&quot;</span>&#160;) const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Actions evaluated during decision making. </p>
+<p>Selects the action with the highest utility.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Context</td><td>Context containing values used by actions. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The selected action, or nullptr if none are valid. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_u_utility_a_i_decision_manager_a25105bc58faa50293198023d4736f03b_cgraph.png" border="0" usemap="#aclass_u_utility_a_i_decision_manager_a25105bc58faa50293198023d4736f03b_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_u_utility_a_i_decision_manager_a25105bc58faa50293198023d4736f03b_cgraph" id="aclass_u_utility_a_i_decision_manager_a25105bc58faa50293198023d4736f03b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,35,185,77"/>
-<area shape="rect" href="class_u_utility_a_i_decision_manager.html#aff66ed6ea60c409b56ea2c3a90954400" title=" " alt="" coords="233,5,412,48"/>
-<area shape="poly" title=" " alt="" coords="185,42,217,38,217,43,185,47"/>
-<area shape="rect" href="class_u_utility_a_i_decision_manager.html#a97023208f2057b37a719fa6ba4f0a43c" title=" " alt="" coords="460,35,663,77"/>
-<area shape="poly" title=" " alt="" coords="185,56,233,57,412,57,444,57,444,62,412,63,233,63,185,62"/>
-<area shape="poly" title=" " alt="" coords="413,35,445,39,444,44,412,40"/>
+<div class="center"><img src="class_u_utility_a_i_decision_manager_a06e58d9f9fa021219316284b59e6c6ae_cgraph.png" border="0" usemap="#aclass_u_utility_a_i_decision_manager_a06e58d9f9fa021219316284b59e6c6ae_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_u_utility_a_i_decision_manager_a06e58d9f9fa021219316284b59e6c6ae_cgraph" id="aclass_u_utility_a_i_decision_manager_a06e58d9f9fa021219316284b59e6c6ae_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,185,72"/>
+<area shape="poly" title=" " alt="" coords="50,29,48,19,55,10,71,5,95,3,121,5,136,11,134,16,119,10,95,8,72,10,58,15,53,21,55,28"/>
+<area shape="rect" href="class_u_utility_a_i_decision_manager.html#a97023208f2057b37a719fa6ba4f0a43c" title=" " alt="" coords="233,29,436,72"/>
+<area shape="poly" title=" " alt="" coords="185,48,217,48,217,53,185,53"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_utility_a_i_decision_manager_a06e58d9f9fa021219316284b59e6c6ae_icgraph.png" border="0" usemap="#aclass_u_utility_a_i_decision_manager_a06e58d9f9fa021219316284b59e6c6ae_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_u_utility_a_i_decision_manager_a06e58d9f9fa021219316284b59e6c6ae_icgraph" id="aclass_u_utility_a_i_decision_manager_a06e58d9f9fa021219316284b59e6c6ae_icgraph">
+<area shape="rect" title=" " alt="" coords="5,29,185,72"/>
+<area shape="poly" title=" " alt="" coords="124,16,113,10,95,8,78,10,68,14,64,21,66,28,60,29,59,19,65,10,77,5,95,3,114,5,126,11"/>
 </map>
 </div>
 
 </div>
 </div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a65bffc8ce0c21d49afbf88c83a5a2064" name="a65bffc8ce0c21d49afbf88c83a5a2064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65bffc8ce0c21d49afbf88c83a5a2064">&#9670;&#160;</a></span>Actions</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TArray&lt;TObjectPtr&lt;<a class="el" href="class_u_utility_a_i_action.html">UUtilityAIAction</a>&gt; &gt; UUtilityAIDecisionManager::Actions</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Actions evaluated during decision making. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Public/<a class="el" href="_utility_a_i_decision_manager_8h_source.html">UtilityAIDecisionManager.h</a></li>
-<li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Private/<b>UtilityAIDecisionManager.cpp</b></li>
+<li>C:/Users/anned/OneDrive/Documenten/Unreal Projects/UtilityAIProject/Plugins/UtilityAI/Source/UtilityAI/Private/<a class="el" href="_utility_a_i_decision_manager_8cpp.html">UtilityAIDecisionManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

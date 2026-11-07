@@ -92,7 +92,7 @@ $(function(){initNavTree('_utility_a_i_action_8h_source.html','',''); });
   <div class="headertitle"><div class="title">UtilityAIAction.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_utility_a_i_action_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;CoreMinimal.h&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;UObject/Object.h&quot;</span></div>
@@ -103,12 +103,14 @@ $(function(){initNavTree('_utility_a_i_action_8h_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">struct </span><a class="code hl_struct" href="struct_f_utility_a_i_consideration_debug_data.html">FUtilityAIConsiderationDebugData</a>;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>UENUM(BlueprintType)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">enum class</span> EUtilityAICombinationMethod : uint8</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90c">   15</a></span>enum class <a class="code hl_enumeration" href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90c">EUtilityAICombinationMethod</a> : uint8</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    Multiply UMETA(DisplayName = <span class="stringliteral">&quot;Multiply&quot;</span>),</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90caa3f80d8f0f1b4ffa8c475f5d60ea5635">   18</a></span>    Multiply <a class="code hl_enumvalue" href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90caa3f80d8f0f1b4ffa8c475f5d60ea5635">UMETA</a>(DisplayName = <span class="stringliteral">&quot;Multiply&quot;</span>),</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    Average UMETA(DisplayName = <span class="stringliteral">&quot;Average&quot;</span>)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90caa3f80d8f0f1b4ffa8c475f5d60ea5635">   21</a></span>    Average <a class="code hl_enumvalue" href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90caa3f80d8f0f1b4ffa8c475f5d60ea5635">UMETA</a>(DisplayName = <span class="stringliteral">&quot;Average&quot;</span>)</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>UCLASS(Blueprintable, Abstract, EditInlineNew, DefaultToInstanced)</div>
 <div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
@@ -118,20 +120,20 @@ $(function(){initNavTree('_utility_a_i_action_8h_source.html','',''); });
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    UPROPERTY(EditAnywhere, Instanced, BlueprintReadOnly, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="struct_f_utility_a_i_consideration_debug_data.html#a1c853266620195b95120234a7a64da30">UPROPERTY</a>(EditAnywhere, Instanced, BlueprintReadOnly, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_action.html#a98aa9133d8eac50e9a97c56021a03d33">   39</a></span>    TArray&lt;TObjectPtr&lt;<a class="code hl_class" href="class_u_utility_a_i_consideration.html">UUtilityAIConsideration</a>&gt;&gt; <a class="code hl_variable" href="class_u_utility_a_i_action.html#a98aa9133d8eac50e9a97c56021a03d33">Considerations</a>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_action.html#a4840ef9bf5e03c39c82df315da54fb85">   43</a></span>    EUtilityAICombinationMethod <a class="code hl_variable" href="class_u_utility_a_i_action.html#a4840ef9bf5e03c39c82df315da54fb85">CombinationMethod</a> =</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        EUtilityAICombinationMethod::Multiply;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_action.html#adc724ac3548acf7c7af19988bcd4fb97">   42</a></span>    <a class="code hl_function" href="class_u_utility_a_i_action.html#adc724ac3548acf7c7af19988bcd4fb97">UPROPERTY</a>(EditAnywhere, BlueprintReadWrite, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_enumeration" href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90c">EUtilityAICombinationMethod</a> CombinationMethod =</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_enumeration" href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90c">EUtilityAICombinationMethod</a>::Multiply;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_function" href="class_u_utility_a_i_action.html#a36e4d857ac6c91557d2c9082b0dd1f22">UFUNCTION</a>(BlueprintNativeEvent, BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_action.html#a0925d59fde1fb2dcb635d7a1d7827a3c">   52</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_utility_a_i_action.html#a0925d59fde1fb2dcb635d7a1d7827a3c">Execute</a>();</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    virtual <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_utility_a_i_action.html#a818c43296dd443963ab9ada9a46d5ec3">Execute_Implementation</a>();</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    virtual <span class="keywordtype">float</span> <a class="code hl_function" href="class_u_utility_a_i_action.html#ad1abbb2aed3b05de141b5cf119fdb964">CalculateUtility</a>(</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_u_utility_a_i_action.html#a36e4d857ac6c91557d2c9082b0dd1f22">   63</a></span>    <a class="code hl_function" href="class_u_utility_a_i_action.html#a36e4d857ac6c91557d2c9082b0dd1f22">UFUNCTION</a>(BlueprintCallable, Category = <span class="stringliteral">&quot;Utility AI&quot;</span>)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    virtual <span class="keywordtype">float</span> CalculateUtility(</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        const <a class="code hl_class" href="class_u_utility_a_i_context.html">UUtilityAIContext</a>* Context</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    ) const;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
@@ -141,23 +143,26 @@ $(function(){initNavTree('_utility_a_i_action_8h_source.html','',''); });
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    ) const;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>};</div>
 </div>
+<div class="ttc" id="a_utility_a_i_action_8h_html_a1c2c0b119a7de381b8361203d874c90c"><div class="ttname"><a href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90c">EUtilityAICombinationMethod</a></div><div class="ttdeci">EUtilityAICombinationMethod</div><div class="ttdef"><b>Definition</b> UtilityAIAction.h:16</div></div>
+<div class="ttc" id="a_utility_a_i_action_8h_html_a1c2c0b119a7de381b8361203d874c90caa3f80d8f0f1b4ffa8c475f5d60ea5635"><div class="ttname"><a href="_utility_a_i_action_8h.html#a1c2c0b119a7de381b8361203d874c90caa3f80d8f0f1b4ffa8c475f5d60ea5635">EUtilityAICombinationMethod::UMETA</a></div><div class="ttdeci">@ UMETA</div><div class="ttdef"><b>Definition</b> UtilityAIAction.h:18</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_action_html"><div class="ttname"><a href="class_u_utility_a_i_action.html">UUtilityAIAction</a></div><div class="ttdef"><b>Definition</b> UtilityAIAction.h:32</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_action_html_a0925d59fde1fb2dcb635d7a1d7827a3c"><div class="ttname"><a href="class_u_utility_a_i_action.html#a0925d59fde1fb2dcb635d7a1d7827a3c">UUtilityAIAction::Execute</a></div><div class="ttdeci">void Execute()</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_action_html_a4840ef9bf5e03c39c82df315da54fb85"><div class="ttname"><a href="class_u_utility_a_i_action.html#a4840ef9bf5e03c39c82df315da54fb85">UUtilityAIAction::CombinationMethod</a></div><div class="ttdeci">EUtilityAICombinationMethod CombinationMethod</div><div class="ttdef"><b>Definition</b> UtilityAIAction.h:43</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_action_html_a36e4d857ac6c91557d2c9082b0dd1f22"><div class="ttname"><a href="class_u_utility_a_i_action.html#a36e4d857ac6c91557d2c9082b0dd1f22">UUtilityAIAction::UFUNCTION</a></div><div class="ttdeci">UFUNCTION(BlueprintCallable, Category=&quot;Utility AI&quot;) virtual float CalculateUtility(const UUtilityAIContext *Context) const</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_action_html_a73ffdf56fa475589c465d2447f1a6a67"><div class="ttname"><a href="class_u_utility_a_i_action.html#a73ffdf56fa475589c465d2447f1a6a67">UUtilityAIAction::CalculateUtilityWithDebug</a></div><div class="ttdeci">float CalculateUtilityWithDebug(const UUtilityAIContext *Context, TArray&lt; FUtilityAIConsiderationDebugData &gt; &amp;OutConsiderations) const</div><div class="ttdef"><b>Definition</b> UtilityAIAction.cpp:43</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_action_html_a818c43296dd443963ab9ada9a46d5ec3"><div class="ttname"><a href="class_u_utility_a_i_action.html#a818c43296dd443963ab9ada9a46d5ec3">UUtilityAIAction::Execute_Implementation</a></div><div class="ttdeci">virtual void Execute_Implementation()</div><div class="ttdef"><b>Definition</b> UtilityAIAction.cpp:13</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_action_html_a98aa9133d8eac50e9a97c56021a03d33"><div class="ttname"><a href="class_u_utility_a_i_action.html#a98aa9133d8eac50e9a97c56021a03d33">UUtilityAIAction::Considerations</a></div><div class="ttdeci">TArray&lt; TObjectPtr&lt; UUtilityAIConsideration &gt; &gt; Considerations</div><div class="ttdef"><b>Definition</b> UtilityAIAction.h:39</div></div>
-<div class="ttc" id="aclass_u_utility_a_i_action_html_ad1abbb2aed3b05de141b5cf119fdb964"><div class="ttname"><a href="class_u_utility_a_i_action.html#ad1abbb2aed3b05de141b5cf119fdb964">UUtilityAIAction::CalculateUtility</a></div><div class="ttdeci">virtual float CalculateUtility(const UUtilityAIContext *Context) const</div><div class="ttdef"><b>Definition</b> UtilityAIAction.cpp:24</div></div>
+<div class="ttc" id="aclass_u_utility_a_i_action_html_adc724ac3548acf7c7af19988bcd4fb97"><div class="ttname"><a href="class_u_utility_a_i_action.html#adc724ac3548acf7c7af19988bcd4fb97">UUtilityAIAction::UPROPERTY</a></div><div class="ttdeci">UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=&quot;Utility AI&quot;) EUtilityAICombinationMethod CombinationMethod</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_consideration_html"><div class="ttname"><a href="class_u_utility_a_i_consideration.html">UUtilityAIConsideration</a></div><div class="ttdef"><b>Definition</b> UtilityAIConsideration.h:19</div></div>
 <div class="ttc" id="aclass_u_utility_a_i_context_html"><div class="ttname"><a href="class_u_utility_a_i_context.html">UUtilityAIContext</a></div><div class="ttdef"><b>Definition</b> UtilityAIContext.h:54</div></div>
 <div class="ttc" id="astruct_f_utility_a_i_consideration_debug_data_html"><div class="ttname"><a href="struct_f_utility_a_i_consideration_debug_data.html">FUtilityAIConsiderationDebugData</a></div><div class="ttdef"><b>Definition</b> UtilityAIDebugTypes.h:14</div></div>
+<div class="ttc" id="astruct_f_utility_a_i_consideration_debug_data_html_a1c853266620195b95120234a7a64da30"><div class="ttname"><a href="struct_f_utility_a_i_consideration_debug_data.html#a1c853266620195b95120234a7a64da30">FUtilityAIConsiderationDebugData::UPROPERTY</a></div><div class="ttdeci">UPROPERTY(BlueprintReadOnly) FName Name</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>UtilityAIProject</b></li><li class="navelem"><b>Plugins</b></li><li class="navelem"><b>UtilityAI</b></li><li class="navelem"><b>Source</b></li><li class="navelem"><b>UtilityAI</b></li><li class="navelem"><b>Public</b></li><li class="navelem"><b>UtilityAIAction.h</b></li>
+    <li class="navelem"><a href="dir_704b499139f2a782aadea36e2ad6a1c1.html">UtilityAIProject</a></li><li class="navelem"><a href="dir_145077d4f85343f2a5a23d0df678674c.html">Plugins</a></li><li class="navelem"><a href="dir_14b63aab9508441a88ce3521d2e8c2b0.html">UtilityAI</a></li><li class="navelem"><a href="dir_d23a8f7eb158b37ee6415f4a1c8d1b7a.html">Source</a></li><li class="navelem"><a href="dir_a6800181311e40cc9016f29e8966f3c3.html">UtilityAI</a></li><li class="navelem"><a href="dir_052945e2c68bd707406162747ea7a76a.html">Public</a></li><li class="navelem"><a href="_utility_a_i_action_8h.html">UtilityAIAction.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

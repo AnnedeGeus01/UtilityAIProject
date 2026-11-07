@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['datasource_0',['DataSource',['../class_u_utility_a_i_consideration.html#a6f7dc13208e7341ac6def0db33e5c9be',1,'UUtilityAIConsideration']]]
+  ['inputmax_0',['InputMax',['../struct_f_utility_a_i_value_binding.html#ac3f72848df6cbaa220513933bdf59b88',1,'FUtilityAIValueBinding']]],
+  ['inputmin_1',['InputMin',['../struct_f_utility_a_i_value_binding.html#ac425d33f3cc9071c6b053bc2c3fcd522',1,'FUtilityAIValueBinding']]]
 ];
